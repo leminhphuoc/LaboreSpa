@@ -41,18 +41,18 @@ namespace Models.Repository
         {
             var productEdit = _db.Products.Where(x => x.id == product.id).SingleOrDefault();
             productEdit.name = product.name;
-            productEdit.metaTitle = productEdit.metaTitle;
-            productEdit.description = productEdit.description;
-            productEdit.image = productEdit.image;
-            productEdit.moreImages = productEdit.moreImages;
-            productEdit.price = productEdit.price;
-            productEdit.promotionPrice = productEdit.promotionPrice;
-            productEdit.quantity = productEdit.quantity;
-            productEdit.idCategory = productEdit.idCategory;
-            productEdit.detail = productEdit.detail;
+            productEdit.metaTitle = product.metaTitle;
+            productEdit.description = product.description;
+            productEdit.image = product.image;
+            productEdit.moreImages = product.moreImages;
+            productEdit.price = product.price;
+            productEdit.promotionPrice = product.promotionPrice;
+            productEdit.quantity = product.quantity;
+            productEdit.idCategory = product.idCategory;
+            productEdit.detail = product.detail;
             productEdit.modifiDate = DateTime.Now;
-            productEdit.status = productEdit.status;
-            productEdit.topHot = productEdit.topHot;
+            productEdit.status = product.status;
+            productEdit.topHot = product.topHot;
             _db.SaveChanges();
             return true;
         }
@@ -83,6 +83,13 @@ namespace Models.Repository
 
             var listProduct = _db.Products.Where(x => x.name.ToUpper() == searchString.ToUpper());
             return listProduct.ToList();
+        }
+
+        public bool CheckExits(string name)
+        {
+            var product = _db.Products.Where(x => x.name == name).SingleOrDefault();
+            if (product != null) return true;
+            return false;
         }
 
         public List<ProductCategory> GetProductCategories()

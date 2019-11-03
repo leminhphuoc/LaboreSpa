@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using Models.Entity;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
@@ -30,6 +31,52 @@ namespace FonSpa.Areas.Admin.Controllers
         {
             ViewBag.ProductCategory = _productAdminServices.GetProductCategory();
             return View();
+        }
+       
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateInput(false)]
+        public ActionResult Create(Product product)
+        {
+            
+            if(ModelState.IsValid)
+            {
+                var addProduct = _productAdminServices.AddProduct(product);
+                var idProduct = addProduct;
+                if (idProduct == 0) ModelState.AddModelError("", "Thêm sản phẩm không thành công !");
+                return RedirectToAction("Index");
+            }
+            return View(product);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var product = _productAdminServices.GetDetail(id);
+            if (product == null) return RedirectToAction("Index");
+            ViewBag.ProductCategory = _productAdminServices.GetProductCategory();
+            return View(product);
+        }
+
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateInput(false)]
+        public ActionResult Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                var editProduct = _productAdminServices.Edit(product);
+                var editProductSuccess = editProduct;
+                if (!editProductSuccess) ModelState.AddModelError("", "Sửa sản phẩm không thành công !");
+                return RedirectToAction("Index");
+            }
+            return View(product);
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            var deleteAccountSuccess = _productAdminServices.Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

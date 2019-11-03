@@ -35,6 +35,35 @@ namespace FonSpa.Services.Services
         { 
             return _productAdminRepository.GetProductCategories();
         }
+        
+        public long AddProduct(Product product)
+        {
+            if (product == null) return 0;
+            var addProduct = _productAdminRepository.AddProduct(product);
+            var idProduct = addProduct;
+            return idProduct;
+        }
+
+        public Product GetDetail(int id)
+        {
+            if (id == 0) return null;
+            var product = _productAdminRepository.GetDetail(id);
+            return product;
+        }
+
+        public bool Edit(Product product)
+        {
+            if (product == null) return false;
+            var editProduct = _productAdminRepository.EditProduct(product);
+            return true;
+        }
+
+        public bool Delete(int id)
+        {
+            if (id == 0) return false;
+            var deleteSuccess = _productAdminRepository.Delete(id);
+            return true;
+        }
     }
 }
 

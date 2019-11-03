@@ -11,5 +11,9 @@ namespace FonSpa.Services.IServices
     {
         List<Product> ListAllByName(string searchString);
         List<ProductCategory> GetProductCategory();
+        long AddProduct(Product product);
+        bool Delete(int id);
+        Product GetDetail(int id);
+        bool Edit(Product product);
     }
 }

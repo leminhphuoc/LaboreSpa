@@ -26,6 +26,8 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IAccountAdminServices, AccountAdminServices>();
             container.RegisterType<IProductAdminRepository, ProductAdminRepository>();
             container.RegisterType<IProductAdminSerivces, ProductAdminSerivces>();
+            container.RegisterType<IServiceAdminRepository, ServiceAdminRepository>();
+            container.RegisterType<IServicesAdminServices, ServicesAdminServices>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             //Admin Account
