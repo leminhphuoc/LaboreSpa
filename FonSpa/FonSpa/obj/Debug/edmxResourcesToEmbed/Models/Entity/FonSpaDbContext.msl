@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FonSpaModelStoreContainer" CdmEntityContainer="FonSpaEntities">
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="FonSpaModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metaTitle" ColumnName="metaTitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountAdmins">
+      <EntityTypeMapping TypeName="FonSpaModel.AccountAdmin">
+        <MappingFragment StoreEntitySet="AccountAdmin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="FonSpaModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="FonSpaModel.Content">
+        <MappingFragment StoreEntitySet="Content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metatitle" ColumnName="metatitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="topHot" ColumnName="topHot" />
+          <ScalarProperty Name="viewCount" ColumnName="viewCount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentCategories">
+      <EntityTypeMapping TypeName="FonSpaModel.ContentCategory">
+        <MappingFragment StoreEntitySet="ContentCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metatitle" ColumnName="metatitle" />
+          <ScalarProperty Name="parentID" ColumnName="parentID" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="showOnHome" ColumnName="showOnHome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="FonSpaModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="typeMember" ColumnName="typeMember" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Footers">
+      <EntityTypeMapping TypeName="FonSpaModel.Footer">
+        <MappingFragment StoreEntitySet="Footer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="typeId" ColumnName="typeId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FooterCategories">
+      <EntityTypeMapping TypeName="FonSpaModel.FooterCategory">
+        <MappingFragment StoreEntitySet="FooterCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="FonSpaModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="typeId" ColumnName="typeId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuTypes">
+      <EntityTypeMapping TypeName="FonSpaModel.MenuType">
+        <MappingFragment StoreEntitySet="MenuType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="FonSpaModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metaTitle" ColumnName="metaTitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="moreImages" ColumnName="moreImages" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="promotionPrice" ColumnName="promotionPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiDate" ColumnName="modifiDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="topHot" ColumnName="topHot" />
+          <ScalarProperty Name="viewCount" ColumnName="viewCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategories">
+      <EntityTypeMapping TypeName="FonSpaModel.ProductCategory">
+        <MappingFragment StoreEntitySet="ProductCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metatitle" ColumnName="metatitle" />
+          <ScalarProperty Name="parentID" ColumnName="parentID" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="showOnHome" ColumnName="showOnHome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="FonSpaModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metaTitle" ColumnName="metaTitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="moreImages" ColumnName="moreImages" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="promotionPrice" ColumnName="promotionPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiDate" ColumnName="modifiDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="topHot" ColumnName="topHot" />
+          <ScalarProperty Name="viewCount" ColumnName="viewCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCategories">
+      <EntityTypeMapping TypeName="FonSpaModel.ServiceCategory">
+        <MappingFragment StoreEntitySet="ServiceCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="metatitle" ColumnName="metatitle" />
+          <ScalarProperty Name="parentID" ColumnName="parentID" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="showOnHome" ColumnName="showOnHome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slides">
+      <EntityTypeMapping TypeName="FonSpaModel.Slide">
+        <MappingFragment StoreEntitySet="Slide">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="displayOrder" ColumnName="displayOrder" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

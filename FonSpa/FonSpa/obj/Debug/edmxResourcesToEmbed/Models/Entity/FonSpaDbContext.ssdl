@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FonSpaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metaTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="detail" Type="ntext" />
+    <Property Name="image" Type="nvarchar" MaxLength="250" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="AccountAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="100" />
+    <Property Name="passWord" Type="nvarchar" MaxLength="100" />
+    <Property Name="type" Type="bit" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metatitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="image" Type="nvarchar" MaxLength="250" />
+    <Property Name="categoryID" Type="bigint" />
+    <Property Name="detail" Type="ntext" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="topHot" Type="date" />
+    <Property Name="viewCount" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="ContentCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metatitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="parentID" Type="int" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="showOnHome" Type="bit" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="passWord" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="typeMember" Type="int" />
+    <Property Name="token" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Footer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="50" />
+    <Property Name="link" Type="nvarchar" MaxLength="100" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="typeId" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="FooterCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="50" />
+    <Property Name="link" Type="nvarchar" MaxLength="100" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="typeId" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="MenuType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metaTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" />
+    <Property Name="moreImages" Type="xml" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="promotionPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="idCategory" Type="int" />
+    <Property Name="detail" Type="ntext" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiDate" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="topHot" Type="date" />
+    <Property Name="viewCount" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metatitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="parentID" Type="int" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="showOnHome" Type="bit" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metaTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" />
+    <Property Name="moreImages" Type="xml" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="promotionPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="idCategory" Type="int" />
+    <Property Name="detail" Type="ntext" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiDate" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="topHot" Type="date" />
+    <Property Name="viewCount" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="metatitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="parentID" Type="int" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+    <Property Name="showOnHome" Type="bit" />
+  </EntityType>
+  <EntityType Name="Slide">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="250" />
+    <Property Name="displayOrder" Type="int" />
+    <Property Name="link" Type="nvarchar" MaxLength="250" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="createdDate" Type="date" />
+    <Property Name="modifiedDate" Type="date" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="FonSpaModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountAdmin" EntityType="Self.AccountAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContentCategory" EntityType="Self.ContentCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Footer" EntityType="Self.Footer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FooterCategory" EntityType="Self.FooterCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuType" EntityType="Self.MenuType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceCategory" EntityType="Self.ServiceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

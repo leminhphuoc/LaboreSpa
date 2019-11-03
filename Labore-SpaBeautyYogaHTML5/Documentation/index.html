@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Documentation - Labore</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="assets/images/icons/favicon-01.png"/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/libs/bootstrap/bootstrap.min.css">
+	<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="assets/libs/animsition/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/libs/syntaxhighlighter/styles/shCoreDefault.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<style>
+		.product-name::after {
+            content: "Labore";
+        }
+
+        .syntaxhighlighter {
+        	border: 1px solid rgba(0,0,0,.2);
+        	padding-top: 10px;
+        	padding-bottom: 10px;
+        }
+
+        .syntaxhighlighter .toolbar {
+        	display: none;
+        }
+	</style>
+	<!--===============================================================================================-->
+
+</head>
+<body class="animsition" data-loader="loader-07">
+
+	<div class="hun-wrapper-site">
+		<aside class="hun-sidebar-site--1">
+			<div class="inner-sidebar">
+				<div class="hun-header">
+					<h2 class="text-uppercase d-none d-lg-block" style="padding: 0 20% 20px 20%; letter-spacing: 2px;">
+						Labore
+					</h2>
+
+					<nav class="navigation-site">
+						<ul>
+							<li>
+								<a href="#sec-01" class="item-menu-fade active">0. Introduction</a>
+							</li>
+
+							<li>
+								<a href="#sec-02" class="item-menu-fade">1. Html Structure</a>
+							</li>
+
+							<li>
+								<a href="#sec-03" class="item-menu-fade">2. Grid & Spacing</a>
+							</li>
+
+							<li>
+								<a href="#sec-04" class="item-menu-fade">3. Logo Setting</a>
+							</li>
+
+							<li>
+								<a href="#sec-05" class="item-menu-fade">4. Main Slider</a>
+							</li>
+
+							<li>
+								<a href="#sec-06" class="item-menu-fade">5. Font & Color</a>
+							</li>
+
+							<li>
+								<a href="#sec-07" class="item-menu-fade">6. Others Setting</a>
+							</li>
+
+							<li>
+								<a href="#sec-08" class="item-menu-fade">7. Source & Credits</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="hun-footer">
+					<div class="copyright-footer">
+						Copyright © 2019 <span class="product-name"></span > theme by <strong>HunTheme</strong>
+					</div>
+				</div>
+			</div>
+		</aside>
+
+		<main class="hun-content-site">
+			<div id="sec-01" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<div class="text-center mb-5">
+							<img src="assets/images/icons/logo.png" alt="IMG">
+
+							<h2 class="text-uppercase my-2" style="letter-spacing: 2px;">
+								Labore Html Theme
+							</h2>
+
+							<strong>Version:</strong>
+							<span>1.0 |</span>
+							<strong>Last update:</strong>
+							<span>06 June 2019</span>
+						</div>
+
+						<div>
+							<p>
+								Thank you for purchasing <strong class="product-name"></strong > template!
+							</p>
+
+							<p>
+								Labore is a responsive, clean and modern HTML Bootstrap Template. Labore template can be used for spa, beauty, yoga,... website. This documentation will give you an understanding of how <strong class="product-name"></strong > is structured and guide you in performing common functions. If you require further assistance not covered in this documentation
+							</p>
+
+							<p>If you need custom customization, please contact us from here:
+								<a href="http://themeforest.net/user/huntheme" target="_blank">http://themeforest.net/user/huntheme</a>
+							</p>
+
+							<p>Thank you so much!</p>
+
+							<p>HUN THEME</p>
+							
+							<h4>What's Included</h4>
+
+							<p>
+								Once you have download the package you will see the following folder structure:
+							</p>
+
+							<ul>
+								<li>
+									<strong>assets</strong>
+
+									<ul>
+										<li>
+											<strong>css</strong> - Main Stylesheet Folder
+										</li>
+										<li>
+											<strong>fonts</strong> - Fonts Icon Folder
+										</li>
+										<li>
+											<strong>images</strong> - Images Folder
+										</li>
+										<li>
+											<strong>js</strong> - Javacripts Folder
+										</li>
+										<li>
+											<strong>libs</strong> - Libraries Folder (jquery, bootstrap...)
+										</li>
+										<li>
+											<strong>sass</strong> - SCSS Folder (base, element, feature...)
+										</li>
+									</ul>
+								</li>
+
+								<li>
+									HTML file (23 file)
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-02" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							1. Html Structure
+						</h2>
+
+						<div class="pb-5">
+							<h4 class="mb-4">
+								Page structure
+							</h4>
+
+							<pre class="brush: html;">
+								&lt;!DOCTYPE html&gt;
+								&lt;html lang="en"&gt;
+
+								&lt;head>
+									<!-- Page meta, page css, page title... -->
+								&lt;/head&gt;
+
+								&lt;body&gt;
+
+									<!-- Header -->
+									<header class="hun-header">
+
+										...
+
+									</header>
+									<!-- end Header -->
+
+									<!-- section -->
+									<div class="sec--name-section">
+
+										...
+
+									</div>
+									<!-- end section -->
+
+									<!-- Footer -->
+									<footer class="hun-footer">
+
+										...
+
+									</footer>
+									<!-- end Footer -->
+										
+								&lt;/body&gt;
+								&lt;/html&gt;
+							</pre>
+						</div>
+
+						<div>
+							<h4 class="mb-4">
+								Element structure
+							</h4>
+
+							<pre class="brush: html;">
+								<!-- element name-element -->
+								<div class="hun-element-name layout">
+									
+									...
+
+								</div>
+								<!-- end element name-element -->
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-03" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							2. Grid & Spacing
+						</h2>
+
+						<p>
+							<strong class="product-name"></strong > use <strong>Bootstrap</strong> for building. For more information about Bootstrap, visit:
+							<a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a>
+						</p>
+						
+						<h4>
+							Grid
+						</h4>
+
+						<p>
+							Bootstrap grid includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating
+							more semantic layouts
+						</p>
+
+						<p>
+							Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:
+						</p>
+
+						<ul>
+							<li>You must start with<code>row</code>
+							</li>
+							<li>There are pre-define classes of columns starting from 1 to 12, example<code>col-md-1</code> to<code>col-md-12</code>
+							</li>
+							<li>Each of these value represent a percentage of the screen, 1 being the smallest and 12 being 100%</li>
+							<li>You can create different grid pattern that finally forms 12</li>
+						</ul>
+
+						<h4>
+							Spacing
+						</h4>
+						
+						<p>
+							Bootstrap includes a wide range of shorthand responsive margin and padding utility classes to modify an element’s appearance.
+						</p>
+
+						<p>
+							Assign responsive-friendly margin or padding values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from .25rem to 3rem.
+						</p>
+
+						<p>
+							You can use classes of bootstrap to make spacing between elements.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="sec-04" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							3. Logo Settings
+						</h2>
+
+						<p>Default site logo is placed inside<code>&lt;div class="logo-header"&gt;</code> container.</p>
+
+						<pre class="brush: html;">
+							<!-- Header -->
+							<header class="hun-header">
+
+								...
+
+									<div class="logo-header">
+										<a href="#" class="main-logo">
+											<img src="assets/images/icons/logo-01.png" alt="IMG">
+										</a>
+
+										<a href="#" class="mobile-logo">
+											<img src="assets/images/icons/logo-01.png" alt="IMG">
+										</a>
+
+										<a href="#" class="sticky-logo">
+											<img src="assets/images/icons/logo-01.png" alt="IMG">
+										</a>
+
+										<a href="#" class="retina-logo">
+											<img src="assets/images/icons/logo-01.png" alt="IMG">
+										</a>
+									</div>
+
+								...
+
+							</header>
+							<!-- end Header -->
+						</pre>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-05" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							4. Main slider
+						</h2>
+
+						<pre class="brush: html;">
+							<div class="hun-element-main-slider">
+								
+								...
+
+							</div>
+						</pre>
+
+						<p>
+							<strong class="product-name"></strong > use <strong>Slick slider</strong> that gives you all the options they need.
+						</p>
+
+						<h4>
+							Setting Slick Slider
+						</h4>
+
+						<p>
+							Please find the full online documentation of Slick Slider
+							<a href="http://kenwheeler.github.io/slick/" target="_blank">here</a>
+						</p>
+
+						<h4>
+							Animation
+						</h4>
+
+						<p>
+							<strong class="product-name"></strong > use <strong>Animate Css</strong> to make content in slide appear with animation after slide change.
+						</p>
+
+						<p>
+							Before apply animation, you have to add <code>data-animate="true"</code> to <code>&lt;div class="js-call-slick"&gt;</code>
+						</p>
+
+						<p>
+							Then add <code>data-appear="..."</code> and <code>data-delay="..."</code> to the content.
+						</p>
+
+						<pre class="brush: html;">
+							<!-- EXAMPLE -->
+							...
+
+							<div class="item-slider">
+								<div class="limiter-content-slide">
+
+									<h2 class="title-slide" data-appear="slideInDown" data-delay="0">
+										...
+									</h2>
+
+									<div class="description-slide" data-appear="slideInUp" data-delay="600">
+										...
+									</div>
+
+									<div class="buttons-slide" data-appear="zoomIn" data-delay="1200">	
+										...
+									</div>
+
+								</div>
+							</div>
+
+							...
+						</pre>
+
+						<p>
+							Values of <code>data-appear=" "</code> can get from <a href="https://daneden.github.io/animate.css/" target="_blank">here</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-06" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							5. Font
+						</h2>
+						
+						<div>
+							<p>
+								<strong class="product-name"></strong> use 2 google font:
+
+								<ul>
+									<li>
+										Nunito: <a href="https://fonts.google.com/specimen/Nunito">https://fonts.google.com/specimen/Nunito</a>
+									</li>
+
+									<li>
+										Alice: <a href="https://fonts.google.com/specimen/Alice">https://fonts.google.com/specimen/Alice</a>
+									</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-07" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							6. Others Setting
+						</h2>
+						
+						<div class="pb-5">
+							<h4>
+								Select 2
+							</h4>
+
+							<p>
+								<strong class="product-name"></strong> use <a href="https://select2.org/" target="_blank">Select 2</a> for select input.
+							</p>
+
+							<p>
+								For more information about Select 2, visit: <a href="https://select2.org/" target="_blank">https://select2.org/</a>
+							</p>
+						</div>
+
+						<div>
+							<h4>
+								Magnific Popup
+							</h4>
+
+							<p>
+								<strong class="product-name"></strong> use <a href="https://dimsemenov.com/plugins/magnific-popup/" target="_blank">Magnific Popup</a> to show image, video.
+							</p>
+
+							<p>
+								For more information about Magnific Popup, visit: <a href="https://dimsemenov.com/plugins/magnific-popup/" target="_blank">https://dimsemenov.com/plugins/magnific-popup/</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sec-08" class="section-content">
+				<div class="inner-section">
+					<div class="container">
+						<h2 class="text-center mb-5">
+							7. Source & Credits
+						</h2>
+						
+						<p class="mb-5">
+							All images are only for demonstration purpose, however you can re-download them in sites below. Almost all (not including overclothing.com, Daniel Zenda, Freepik etc...) images are released free of copyrights under Creative Commons CC0.
+						</p>
+
+						<div class="mb-5">
+							<h4>Images & Mockups</h4>
+
+							<ul>
+								<li>
+									All Free Stocks
+									<a target="_blank" href="http://allthefreestock.com">http://allthefreestock.com</a>
+								</li>
+
+								<li>
+									Pexels
+									<a target="_blank" href="https://www.pexels.com/">https://www.pexels.com/</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="mb-5">
+							<h4>Scripts</h4>
+
+							<ul>
+								<li>
+									Animsition Loader
+									<a target="_blank" href="http://git.blivesta.com/animsition/">http://git.blivesta.com/animsition/</a>
+								</li>
+
+								<li>
+									jQuery
+									<a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a>
+								</li>
+
+								<li>
+									Slick
+									<a target="_blank" href="http://kenwheeler.github.io/slick/">http://kenwheeler.github.io/slick/</a>
+								</li>
+
+								<li>
+									Magnific Popup
+									<a target="_blank" href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a>
+								</li>
+
+								<li>
+									Select2
+									<a target="_blank" href="https://select2.org/">https://select2.org/</a>
+								</li>
+
+								<li>
+									Date Range Picker
+									<a target="_blank" href="http://www.daterangepicker.com/">http://www.daterangepicker.com/</a>
+								</li>
+
+								<li>
+									Theia Sticky Sidebar
+									<a target="_blank" href="https://github.com/WeCodePixels/theia-sticky-sidebar">https://github.com/WeCodePixels/theia-sticky-sidebar</a>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4>CSS & Fonts</h4>
+
+							<ul>
+								<li>
+									Bootstrap Framework
+									<a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a>
+								</li>
+
+								<li>
+									Animate CSS
+									<a target="_blank" href="http://daneden.github.io/animate.css/">http://daneden.github.io/animate.css/</a>
+								</li>
+
+								<li>
+									Font Awesome 4
+									<a target="_blank" href="https://fontawesome.com/v4.7.0/cheatsheet/">https://fontawesome.com/v4.7.0/cheatsheet/</a>
+								</li>
+
+								<li>
+									Material Design Iconic Font
+									<a target="_blank" href="https://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html">https://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html</a>
+								</li>
+
+								<li>
+									Simple Line Icons
+									<a target="_blank" href="https://pagellapolitica.it/static/plugins/line-icons/">https://pagellapolitica.it/static/plugins/line-icons/</a>
+								</li>
+
+								<li>
+									Linearicons
+									<a target="_blank" href="https://linearicons.com/free">https://linearicons.com/free</a>
+								</li>
+
+								<li>
+									Google Fonts
+									<a target="_blank" href="https://www.google.com/fonts">https://www.google.com/fonts</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	
+
+<!--===============================================================================================-->
+<script src="assets/libs/jquery/jquery-1.11.0.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/libs/bootstrap/popper.js"></script>
+<script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/libs/animsition/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="assets/libs/syntaxhighlighter/scripts/shCore.js"></script>
+<script src="assets/libs/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script src="assets/libs/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script src="assets/libs/syntaxhighlighter/scripts/shBrushPlain.js"></script>
+<script src="assets/libs/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script>
+    SyntaxHighlighter.all();
+</script>
+<!--===============================================================================================-->
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>

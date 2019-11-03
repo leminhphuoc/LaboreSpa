@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FonSpaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AccountAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="passWord" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Boolean" />
+    <Property Name="STATUS" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metatitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="categoryID" Type="Int64" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="topHot" Type="DateTime" Precision="0" />
+    <Property Name="viewCount" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ContentCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metatitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="parentID" Type="Int32" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="showOnHome" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="typeMember" Type="Int32" />
+    <Property Name="token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Footer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="typeId" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="FooterCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="typeId" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MenuType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="moreImages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="promotionPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="idCategory" Type="Int32" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="topHot" Type="DateTime" Precision="0" />
+    <Property Name="viewCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metatitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="parentID" Type="Int32" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="showOnHome" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="moreImages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="promotionPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="idCategory" Type="Int32" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="topHot" Type="DateTime" Precision="0" />
+    <Property Name="viewCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ServiceCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="metatitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="parentID" Type="Int32" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="showOnHome" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Slide">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="displayOrder" Type="Int32" />
+    <Property Name="link" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="0" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="FonSpaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Abouts" EntityType="Self.About" />
+    <EntitySet Name="AccountAdmins" EntityType="Self.AccountAdmin" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Contents" EntityType="Self.Content" />
+    <EntitySet Name="ContentCategories" EntityType="Self.ContentCategory" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Footers" EntityType="Self.Footer" />
+    <EntitySet Name="FooterCategories" EntityType="Self.FooterCategory" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="MenuTypes" EntityType="Self.MenuType" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="ServiceCategories" EntityType="Self.ServiceCategory" />
+    <EntitySet Name="Slides" EntityType="Self.Slide" />
+  </EntityContainer>
+</Schema>
