@@ -67,12 +67,24 @@
     <Compile Include="Entity\ServiceCategory.cs" />
     <Compile Include="Entity\Slide.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
+    <Compile Include="IRepository\IContactAdminRepository.cs" />
+    <Compile Include="IRepository\IContentAdminRepository.cs" />
+    <Compile Include="IRepository\ICustomerAdminRepository.cs" />
+    <Compile Include="IRepository\IFooterAdminRepository.cs" />
+    <Compile Include="IRepository\IMenuAdminRepository.cs" />
     <Compile Include="IRepository\IProductAdminRepository.cs" />
     <Compile Include="IRepository\IServiceAdminRepository.cs" />
+    <Compile Include="IRepository\ISlideAdminRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AccountAdminRepository.cs" />
+    <Compile Include="Repository\ContactAdminRepository.cs" />
+    <Compile Include="Repository\ContentAdminRepository.cs" />
+    <Compile Include="Repository\CustomerAdminRepository.cs" />
+    <Compile Include="Repository\FooterAdminRepository.cs" />
+    <Compile Include="Repository\MenuAdminRepository.cs" />
     <Compile Include="Repository\ProductAdminRepository.cs" />
     <Compile Include="Repository\ServiceAdminRepository.cs" />
+    <Compile Include="Repository\SlideAdminRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
