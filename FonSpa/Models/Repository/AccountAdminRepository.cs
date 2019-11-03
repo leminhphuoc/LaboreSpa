@@ -16,6 +16,7 @@ namespace Models.Repository
 
         public AccountAdminRepository()
         {
+            var abc = "str";
             _db = new FonSpaDbContext();
         }
 
