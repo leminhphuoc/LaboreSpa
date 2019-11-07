@@ -15,5 +15,6 @@ namespace FonSpa.Services.IServices
         bool Delete(int id);
         Product GetDetail(int id);
         bool Edit(Product product);
+        bool? ChangeStatus(int id);
     }
 }

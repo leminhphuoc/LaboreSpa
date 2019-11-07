@@ -17,8 +17,10 @@ D:\Tieuluanchuyennganh\FonSpa\Models\bin\Debug\EntityFramework.dll
 D:\Tieuluanchuyennganh\FonSpa\Models\bin\Debug\EntityFramework.SqlServer.dll
 D:\Tieuluanchuyennganh\FonSpa\Models\bin\Debug\EntityFramework.xml
 D:\Tieuluanchuyennganh\FonSpa\Models\bin\Debug\EntityFramework.SqlServer.xml
-D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csprojAssemblyReference.cache
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csproj.CopyComplete
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.dll
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.pdb
+D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.InitialCreate.resources
+D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csproj.GenerateResource.cache
+D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.add_content.resources

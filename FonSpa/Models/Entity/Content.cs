@@ -9,7 +9,6 @@ namespace Models.Entity
     [Table("Content")]
     public partial class Content
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long id { get; set; }
 
         [StringLength(250)]

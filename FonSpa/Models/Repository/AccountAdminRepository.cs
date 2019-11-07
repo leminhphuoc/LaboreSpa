@@ -1,5 +1,6 @@
 ﻿using Models.Entity;
 using Models.IRepository;
+using Models.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Models.Repository
         public AccountAdminRepository()
         {
             _db = new FonSpaDbContext();
+
         }
 
         public AccountAdmin GetDetail(long id)

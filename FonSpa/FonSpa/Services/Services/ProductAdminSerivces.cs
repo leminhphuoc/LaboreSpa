@@ -64,6 +64,12 @@ namespace FonSpa.Services.Services
             var deleteSuccess = _productAdminRepository.Delete(id);
             return true;
         }
+
+        public bool? ChangeStatus(int id)
+        {
+            var status = _productAdminRepository.ChangeStatus(id);
+            return status;
+        } 
     }
 }
 

@@ -5,6 +5,7 @@
     List<Models.Entity.ProductCategory> listProductCategory = ViewBag.ProductCategory;
 }
 @section jsFooter{
+
     <script src="~/Asset/Admin/Controller/ProductController.js"></script>
 }
 
@@ -44,32 +45,34 @@
                                         </td>
                                         <td>@item.name</td>
                                         <td>@item.quantity</td>
-                                        <td>@{                                           
-                                            if(item.idCategory != null)
-                                            {
-                                                foreach(var category in  listProductCategory)
+                                        <td>
+                                            @{
+                                                if (item.idCategory != null)
                                                 {
-                                                    if(item.idCategory == category.id)
+                                                    foreach (var category in listProductCategory)
                                                     {
-                                                        @: @category.name
+                                                        if (item.idCategory == category.id)
+                                                        {
+                                                            @: @category.name
+                                                        }
                                                     }
                                                 }
-                                            }
-                                        }</td>
-                                        <td><a href="#" class="btn-active" data-id="@item.id">@(item.status == true ? "Kích hoạt" : "Khóa")</a></td>
-                                        <td>
-                                            <a href="/Admin/ProductAdmin/Edit/@item.id">Sửa</a>
-                                            /
-                                            @Ajax.ActionLink("Xóa", "Delete", new {@id = item.id} ,new AjaxOptions
-                                       {
-                                           Confirm = "Bạn có muốn xoá bản ghi này?",
-                                           OnComplete = "$('#row_" + @item.id + "').remove()",
-                                           HttpMethod = "Delete"
-                                       })
-                                        </td>
-                                    </tr>
-                                }
+                                        }
+                                    </td>
+                                    <td><a href="#" class="btn-active" data-id="@item.id">@(item.status == true ? "Kích hoạt" : "Khóa")</a></td>
+                                    <td>
+                                        <a href="/Admin/ProductAdmin/Edit/@item.id">Sửa</a>
+                                        /
+                                        @Ajax.ActionLink("Xóa", "Delete", new {@id = item.id} ,new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xoá bản ghi này?",
+                                       OnComplete = "$('#row_" + @item.id + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+                                </tr>
                             }
+                        }
                         }
                     </tbody>
                 </table>

@@ -56,11 +56,13 @@
     <Compile Include="Entity\Content.cs" />
     <Compile Include="Entity\ContentCategory.cs" />
     <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\C__MigrationHistory.cs" />
     <Compile Include="Entity\FonSpaDbContext.cs" />
     <Compile Include="Entity\Footer.cs" />
     <Compile Include="Entity\FooterCategory.cs" />
     <Compile Include="Entity\Menu.cs" />
     <Compile Include="Entity\MenuType.cs" />
+    <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\ProductCategory.cs" />
     <Compile Include="Entity\Service.cs" />
@@ -73,8 +75,18 @@
     <Compile Include="IRepository\IFooterAdminRepository.cs" />
     <Compile Include="IRepository\IMenuAdminRepository.cs" />
     <Compile Include="IRepository\IProductAdminRepository.cs" />
+    <Compile Include="IRepository\IProductCategoryRepository.cs" />
     <Compile Include="IRepository\IServiceAdminRepository.cs" />
     <Compile Include="IRepository\ISlideAdminRepository.cs" />
+    <Compile Include="Migrations\201911010814021_InitialCreate.cs" />
+    <Compile Include="Migrations\201911010814021_InitialCreate.Designer.cs">
+      <DependentUpon>201911010814021_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911061011162_add_content.cs" />
+    <Compile Include="Migrations\201911061011162_add_content.Designer.cs">
+      <DependentUpon>201911061011162_add_content.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AccountAdminRepository.cs" />
     <Compile Include="Repository\ContactAdminRepository.cs" />
@@ -83,12 +95,24 @@
     <Compile Include="Repository\FooterAdminRepository.cs" />
     <Compile Include="Repository\MenuAdminRepository.cs" />
     <Compile Include="Repository\ProductAdminRepository.cs" />
+    <Compile Include="Repository\ProductCategoryRepository.cs" />
     <Compile Include="Repository\ServiceAdminRepository.cs" />
     <Compile Include="Repository\SlideAdminRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201911010814021_InitialCreate.resx">
+      <DependentUpon>201911010814021_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911061011162_add_content.resx">
+      <DependentUpon>201911061011162_add_content.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

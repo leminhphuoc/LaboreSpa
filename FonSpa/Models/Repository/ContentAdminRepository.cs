@@ -78,5 +78,10 @@ namespace Models.Repository
             return _db.ContentCategories.ToList();
         }
 
+        public List<Content> ListSearchContent(string searchString)
+        {
+            return _db.Contents.Where(x => x.name == searchString).ToList();
+        }
+
     }
 }

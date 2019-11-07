@@ -10,8 +10,10 @@ namespace Models.Entity
         public FonSpaDbContext()
             : base("name=FonSpaDbContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FonSpaDbContext, Migrations.Configuration>());
         }
 
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<About> Abouts { get; set; }
         public virtual DbSet<AccountAdmin> AccountAdmins { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
@@ -22,6 +24,7 @@ namespace Models.Entity
         public virtual DbSet<FooterCategory> FooterCategories { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MenuType> MenuTypes { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Service> Services { get; set; }

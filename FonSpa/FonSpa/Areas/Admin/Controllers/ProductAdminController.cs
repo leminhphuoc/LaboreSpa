@@ -20,12 +20,12 @@ namespace FonSpa.Areas.Admin.Controllers
         public ActionResult Index(int? page,string searchString = null)
         {
             var listProduct = _productAdminServices.ListAllByName(searchString);
-            int pageSize = 8;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             var listProductPaged = listProduct.ToPagedList(pageNumber, pageSize);
             ViewBag.ProductCategory = _productAdminServices.GetProductCategory();
             return View(listProductPaged);
-        }
+        }   
 
         public ActionResult Create()
         {
@@ -77,6 +77,16 @@ namespace FonSpa.Areas.Admin.Controllers
         {
             var deleteAccountSuccess = _productAdminServices.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(int id)
+        {
+            var res = _productAdminServices.ChangeStatus(id);
+            return Json(new
+            {
+                Status = res
+            });
         }
     }
 }

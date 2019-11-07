@@ -1,4 +1,4 @@
-﻿namespace Models.Entity
+namespace Models.Entity
 {
     using System;
     using System.Collections.Generic;
@@ -11,12 +11,12 @@
     {
         public long id { get; set; }
 
+        [Required]
         [StringLength(100)]
-        [Required(ErrorMessage ="Vui lòng điền UserName !")]
         public string userName { get; set; }
 
+        [Required]
         [StringLength(100)]
-        [Required(ErrorMessage = "Vui lòng điền Password !")]
         public string passWord { get; set; }
 
         public bool? type { get; set; }

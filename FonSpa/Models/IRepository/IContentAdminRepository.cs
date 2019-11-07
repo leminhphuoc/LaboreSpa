@@ -16,5 +16,6 @@ namespace Models.IRepository
         bool EditContent(Content content);
         bool Delete(long id);
         List<ContentCategory> GetContentCategories();
+        List<Content> ListSearchContent(string searchString);
     }
 }
