@@ -2513,6 +2513,7 @@
     <Content Include="Areas\Admin\Views\ContentAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CustomerAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuAdmin\Index.cshtml" />
     <None Include="Asset\Admin\js\Plugin\ckfinder\packages.config" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\README.md" />
@@ -2619,7 +2620,6 @@
     <Folder Include="Areas\Admin\Views\ContentCategoryAdmin\" />
     <Folder Include="Areas\Admin\Views\FooterAdmin\" />
     <Folder Include="Areas\Admin\Views\FooterTypeAdmin\" />
-    <Folder Include="Areas\Admin\Views\MenuAdmin\" />
     <Folder Include="Areas\Admin\Views\MenuTypeAdmin\" />
     <Folder Include="Areas\Admin\Views\OrdersAdmin\" />
     <Folder Include="Areas\Admin\Views\ProductCategoryAdmin\" />

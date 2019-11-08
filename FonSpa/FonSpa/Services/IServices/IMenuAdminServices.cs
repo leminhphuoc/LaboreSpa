@@ -15,5 +15,6 @@ namespace FonSpa.Services.IServices
         Menu GetDetail(int id);
         bool Edit(Menu menu);
         bool? ChangeStatus(int id);
+        List<Menu> ListMenuByText(string searchString);
     }
 }

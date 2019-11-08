@@ -17,6 +17,15 @@ namespace FonSpa.Services.Services
             _menuAdminRepository = menuAdminRepository;
         }
 
+        public List<Menu> ListMenuByText(string searchString)
+        {
+            if (searchString != null)
+            {
+                return _menuAdminRepository.GetMenusByText(searchString);
+            }
+            return _menuAdminRepository.GetListMenu();
+        }
+
         public List<MenuType> GetMenuTypes()
         {
             return _menuAdminRepository.GetMenuType();

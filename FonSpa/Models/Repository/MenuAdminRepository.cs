@@ -30,6 +30,11 @@ namespace Models.Repository
             return _db.Menus.ToList();
         }
 
+        public List<Menu> GetMenusByText(string searchString)
+        {
+            return _db.Menus.Where(x => x.text == searchString).ToList();
+        }
+
         public long AddMenu(Menu menu)
         {
             var addMenu = _db.Menus.Add(menu);
@@ -68,6 +73,8 @@ namespace Models.Repository
             _db.SaveChanges();
             return accountNeedChange.status;
         }
+
+
 
         public List<MenuType> GetMenuType()
         {
