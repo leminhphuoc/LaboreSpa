@@ -65,7 +65,6 @@ namespace FonSpa.Services.Services
             var status = _customerAdminRepository.ChangeStatus(id);
             return status;
         }
-        
 
     }
 }
