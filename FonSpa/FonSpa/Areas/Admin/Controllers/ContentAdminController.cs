@@ -88,11 +88,5 @@ namespace FonSpa.Areas.Admin.Controllers
                 Status = res
             });
         }
-        [HttpDelete]
-        public ActionResult Delete(int id)
-        {
-            var deleteAccountSuccess = _contentServices.Delete(id);
-            return RedirectToAction("Index");
-        }
     }
 }

@@ -32,6 +32,8 @@ namespace Models.Repository
 
         public long AddSlide(Slide slide)
         {
+            slide.status = false;
+            slide.createdDate = DateTime.Now;
             var addSlide = _db.Slides.Add(slide);
             _db.SaveChanges();
             return addSlide.id;

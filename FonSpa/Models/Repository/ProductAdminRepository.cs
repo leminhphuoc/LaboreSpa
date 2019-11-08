@@ -32,6 +32,8 @@ namespace Models.Repository
 
         public long AddProduct(Product product)
         {
+            product.status = false;
+            product.createdDate = DateTime.Now;
             var addProduct = _db.Products.Add(product);
             _db.SaveChanges();
             return addProduct.id;
