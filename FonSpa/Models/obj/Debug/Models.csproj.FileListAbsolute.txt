@@ -24,3 +24,4 @@ D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.pdb
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.InitialCreate.resources
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csproj.GenerateResource.cache
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.add_content.resources
+D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csprojAssemblyReference.cache

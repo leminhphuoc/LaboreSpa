@@ -66,5 +66,12 @@ namespace FonSpa.Services.Services
             return status;
         }
 
+        public bool Delete(int id)
+        {
+            if (id == 0) return false;
+            var deleteSuccess = _contentAdminRepository.Delete(id);
+            return deleteSuccess;
+        }
+
     }
 }
