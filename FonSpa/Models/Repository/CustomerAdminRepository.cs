@@ -32,6 +32,8 @@ namespace Models.Repository
 
         public long AddCustomer(Customer customer)
         {
+            customer.status = false;
+            customer.createdDate = DateTime.Now;
             var addCustomer = _db.Customers.Add(customer);
             _db.SaveChanges();
             return addCustomer.id;

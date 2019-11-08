@@ -32,6 +32,8 @@ namespace Models.Repository
 
         public long AddContent(Content content)
         {
+            content.status = false;
+            content.createdDate = DateTime.Now;
             var addContent = _db.Contents.Add(content);
             _db.SaveChanges();
             return addContent.id;

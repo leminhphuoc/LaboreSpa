@@ -32,6 +32,8 @@ namespace Models.Repository
 
         public long AddService(Service service)
         {
+            service.status = false;
+            service.createdDate = DateTime.Now;
             var addService = _db.Services.Add(service);
             _db.SaveChanges();
             return addService.id;

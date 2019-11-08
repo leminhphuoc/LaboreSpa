@@ -32,6 +32,7 @@ namespace Models.Repository
 
         public long AddFooter(Footer footer)
         {
+            footer.status = false;
             var addFooter = _db.Footers.Add(footer);
             _db.SaveChanges();
             return addFooter.id;

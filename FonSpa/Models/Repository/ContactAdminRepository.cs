@@ -32,6 +32,7 @@ namespace Models.Repository
 
         public long AddContact(Contact contact)
         {
+            contact.status = false;
             var addContact = _db.Contacts.Add(contact);
             _db.SaveChanges();
             return addContact.id;

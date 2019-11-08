@@ -32,6 +32,7 @@ namespace Models.Repository
 
         public long AddMenu(Menu menu)
         {
+            menu.status = false;
             var addMenu = _db.Menus.Add(menu);
             _db.SaveChanges();
             return addMenu.id;
