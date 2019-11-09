@@ -10,6 +10,7 @@ namespace Models.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Models.Entity.FonSpaDbContext";
         }
 

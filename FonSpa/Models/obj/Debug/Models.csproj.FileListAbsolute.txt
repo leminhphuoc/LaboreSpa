@@ -23,7 +23,6 @@ D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.dll
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.pdb
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.InitialCreate.resources
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csproj.GenerateResource.cache
-D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.add_content.resources
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\bin\Debug\Models.dll.config
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\bin\Debug\Models.dll
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\bin\Debug\Models.pdb
@@ -38,3 +37,4 @@ E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csproj.CoreCompile
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csproj.CopyComplete
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.dll
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.pdb
+D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csprojAssemblyReference.cache

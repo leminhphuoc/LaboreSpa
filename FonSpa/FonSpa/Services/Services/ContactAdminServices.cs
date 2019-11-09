@@ -25,6 +25,11 @@ namespace FonSpa.Services.Services
             return idContact;
         }
 
+        public List<Contact> GetListContact()
+        {
+            return _contactAdminRepository.GetListContact();
+        }
+
         public Contact GetDetail(int id)
         {
             if (id == 0) return null;
@@ -44,6 +49,11 @@ namespace FonSpa.Services.Services
             if (id == 0) return false;
             var deleteSuccess = _contactAdminRepository.Delete(id);
             return true;
+        }
+
+        public bool? ChangeStatus(int id)
+        {
+            return _contactAdminRepository.ChangeStatus(id);
         }
     }
 }

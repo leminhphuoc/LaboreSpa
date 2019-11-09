@@ -45,7 +45,8 @@ namespace Models.Repository
             SlideEdit.image = slide.image;
             SlideEdit.displayOrder = slide.displayOrder;
             SlideEdit.link = slide.link;
-            SlideEdit.description = slide.description;
+            SlideEdit.title = slide.title;
+            SlideEdit.subtitle = slide.subtitle;
             SlideEdit.modifiedDate = DateTime.Now;
             SlideEdit.status = slide.status;
             _db.SaveChanges();

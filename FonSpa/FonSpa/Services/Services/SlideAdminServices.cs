@@ -16,6 +16,11 @@ namespace FonSpa.Services.Services
             _slideAdminRepository = slideAdminRepository;
         }
 
+        public List<Slide> GetListSlide()
+        {
+            return _slideAdminRepository.GetListSlide();
+        }
+
         public long AddSlide(Slide slide)
         {
             if (slide == null) return 0;

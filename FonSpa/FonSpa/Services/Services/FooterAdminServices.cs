@@ -22,6 +22,11 @@ namespace FonSpa.Services.Services
             return _footerAdminRepository.GetFooterCategories();
         }
 
+        public List<Footer> GetListFooter()
+        {
+             return _footerAdminRepository.GetListFooter();
+        }
+
         public long AddFooter(Footer footer)
         {
             if (footer == null) return 0;

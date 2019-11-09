@@ -16,6 +16,7 @@ namespace Models.IRepository
         bool EditMenu(Menu menu);
         bool Delete(long id);
         List<MenuType> GetMenuType();
+        List<Menu> GetMenusByText(string searchString);
     }
 }
 

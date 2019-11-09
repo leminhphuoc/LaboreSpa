@@ -8,13 +8,13 @@
             var btn = $(this);
             var id = btn.data('id');
             $.ajax({
-                url: "/Admin/Category/ChangeStatus",
+                url: "/Admin/ContactAdmin/ChangeStatus",
                 data: { id: id },
                 dataType: "json",
                 type: "POST",
                 success: function (res) {
                     console.log(res);
-                    if (res.status == true) {
+                    if (res.Status == true) {
                         btn.text('Kích hoạt');
                     }
                     else {
