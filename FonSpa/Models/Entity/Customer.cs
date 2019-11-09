@@ -13,11 +13,7 @@ namespace Models.Entity
 
         [Required]
         [StringLength(100)]
-        public string userName { get; set; }
-
-        [Required]
-        [StringLength(200)]
-        public string passWord { get; set; }
+        public string Name { get; set; }
 
         [StringLength(100)]
         public string email { get; set; }
@@ -27,8 +23,6 @@ namespace Models.Entity
 
         [StringLength(100)]
         public string address { get; set; }
-
-        public int? typeMember { get; set; }
 
         [StringLength(100)]
         public string token { get; set; }

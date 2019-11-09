@@ -249,6 +249,7 @@
     <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServicesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlideAdminController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Asset\Admin\js\Plugin\ckfinder\App_Code\ConnectorConfig.cs" />
@@ -291,6 +292,7 @@
     <Content Include="Asset\Admin\Controller\FooterController.js" />
     <Content Include="Asset\Admin\Controller\MenuController.js" />
     <Content Include="Asset\Admin\Controller\ProductController.js" />
+    <Content Include="Asset\Admin\Controller\ServicesController.js" />
     <Content Include="Asset\Admin\Controller\SlideController.js" />
     <Content Include="Asset\Admin\css\bootstrap.min.css" />
     <Content Include="Asset\Admin\css\font-awesome.css" />
@@ -2524,6 +2526,9 @@
     <Content Include="Areas\Admin\Views\SlideAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SlideAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SlideAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesAdmin\Edit.cshtml" />
     <None Include="Asset\Admin\js\Plugin\ckfinder\packages.config" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\README.md" />
@@ -2632,7 +2637,6 @@
     <Folder Include="Areas\Admin\Views\FooterTypeAdmin\" />
     <Folder Include="Areas\Admin\Views\MenuTypeAdmin\" />
     <Folder Include="Areas\Admin\Views\ProductCategoryAdmin\" />
-    <Folder Include="Areas\Admin\Views\ServicesAdmin\" />
     <Folder Include="Areas\Admin\Views\ServicesCategoryAdmin\" />
     <Folder Include="Asset\Admin\js\Plugin\ckfinder\App_Data\" />
     <Folder Include="Data1\" />

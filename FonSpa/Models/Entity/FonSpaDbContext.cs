@@ -30,6 +30,8 @@ namespace Models.Entity
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceCategory> ServiceCategories { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<CustomerAccount> CustomerAccounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -52,6 +54,8 @@ namespace Models.Entity
             modelBuilder.Entity<Service>()
                 .Property(e => e.promotionPrice)
                 .HasPrecision(18, 0);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

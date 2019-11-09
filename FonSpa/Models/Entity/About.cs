@@ -9,6 +9,7 @@ namespace Models.Entity
     [Table("About")]
     public partial class About
     {
+       
         public long id { get; set; }
 
         [StringLength(250)]

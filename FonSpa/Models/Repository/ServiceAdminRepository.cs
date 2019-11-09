@@ -43,18 +43,18 @@ namespace Models.Repository
         {
             var serviceEdit = _db.Services.Where(x => x.id == service.id).SingleOrDefault();
             serviceEdit.name = service.name;
-            serviceEdit.metaTitle = serviceEdit.metaTitle;
-            serviceEdit.description = serviceEdit.description;
-            serviceEdit.image = serviceEdit.image;
-            serviceEdit.moreImages = serviceEdit.moreImages;
-            serviceEdit.price = serviceEdit.price;
-            serviceEdit.promotionPrice = serviceEdit.promotionPrice;
-            serviceEdit.quantity = serviceEdit.quantity;
-            serviceEdit.idCategory = serviceEdit.idCategory;
-            serviceEdit.detail = serviceEdit.detail;
+            serviceEdit.metaTitle = service.metaTitle;
+            serviceEdit.description = service.description;
+            serviceEdit.image = service.image;
+            serviceEdit.moreImages = service.moreImages;
+            serviceEdit.price = service.price;
+            serviceEdit.promotionPrice = service.promotionPrice;
+            serviceEdit.quantity = service.quantity;
+            serviceEdit.idCategory = service.idCategory;
+            serviceEdit.detail = service.detail;
             serviceEdit.modifiDate = DateTime.Now;
-            serviceEdit.status = serviceEdit.status;
-            serviceEdit.topHot = serviceEdit.topHot;
+            serviceEdit.status = service.status;
+            serviceEdit.topHot = service.topHot;
             _db.SaveChanges();
             return true;
         }

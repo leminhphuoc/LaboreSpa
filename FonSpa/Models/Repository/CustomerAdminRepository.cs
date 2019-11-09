@@ -42,12 +42,10 @@ namespace Models.Repository
         public bool EditCustomer(Customer customer)
         {
             var customerEdit = _db.Customers.Where(x => x.id == customer.id).SingleOrDefault();
-            customerEdit.userName = customer.userName;
-            customerEdit.passWord = customer.passWord;
+            customerEdit.Name = customer.Name;
             customerEdit.email = customer.email;
             customerEdit.phone = customer.phone;
             customerEdit.address = customer.address;
-            customerEdit.typeMember = customer.typeMember;
             customerEdit.token = customer.token;
             customerEdit.modifiedDate = DateTime.Now;
             customerEdit.status = customer.status;
@@ -79,7 +77,7 @@ namespace Models.Repository
         {
             if (searchString == null) return null;
 
-            var listCustomer = _db.Customers.Where(x => x.userName.ToUpper() == searchString.ToUpper());
+            var listCustomer = _db.Customers.Where(x => x.Name.ToUpper() == searchString.ToUpper());
             return listCustomer.ToList();
         }
 
