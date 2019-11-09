@@ -33,7 +33,6 @@ E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\bin\Debug\EntityFramework.xml
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\bin\Debug\EntityFramework.SqlServer.xml
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csprojAssemblyReference.cache
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.Migrations.InitialCreate.resources
-E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.Migrations.add_content.resources
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csproj.GenerateResource.cache
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.csproj.CopyComplete
