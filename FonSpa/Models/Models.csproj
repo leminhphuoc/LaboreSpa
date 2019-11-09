@@ -71,12 +71,16 @@
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
     <Compile Include="IRepository\IContentAdminRepository.cs" />
+    <Compile Include="IRepository\IContentCategoryAdminRepository.cs" />
     <Compile Include="IRepository\ICustomerAdminRepository.cs" />
     <Compile Include="IRepository\IFooterAdminRepository.cs" />
+    <Compile Include="IRepository\IFooterCategoryAdminRepository.cs" />
     <Compile Include="IRepository\IMenuAdminRepository.cs" />
+    <Compile Include="IRepository\IMenuTypeAdminRepository.cs" />
     <Compile Include="IRepository\IProductAdminRepository.cs" />
-    <Compile Include="IRepository\IProductCategoryRepository.cs" />
+    <Compile Include="IRepository\IProductCategoryAdminRepository.cs" />
     <Compile Include="IRepository\IServiceAdminRepository.cs" />
+    <Compile Include="IRepository\IServiceCategoryAdminRepository.cs" />
     <Compile Include="IRepository\ISlideAdminRepository.cs" />
     <Compile Include="Migrations\201911010814021_InitialCreate.cs" />
     <Compile Include="Migrations\201911010814021_InitialCreate.Designer.cs">
@@ -87,12 +91,16 @@
     <Compile Include="Repository\AccountAdminRepository.cs" />
     <Compile Include="Repository\ContactAdminRepository.cs" />
     <Compile Include="Repository\ContentAdminRepository.cs" />
+    <Compile Include="Repository\ContentCategoryAdminRepository.cs" />
     <Compile Include="Repository\CustomerAdminRepository.cs" />
     <Compile Include="Repository\FooterAdminRepository.cs" />
+    <Compile Include="Repository\FooterCategoryAdminRepository.cs" />
     <Compile Include="Repository\MenuAdminRepository.cs" />
+    <Compile Include="Repository\MenuTypeAdminRepository.cs" />
     <Compile Include="Repository\ProductAdminRepository.cs" />
-    <Compile Include="Repository\ProductCategoryRepository.cs" />
+    <Compile Include="Repository\ProductCategoryAdminRepository.cs" />
     <Compile Include="Repository\ServiceAdminRepository.cs" />
+    <Compile Include="Repository\ServiceCategoryAdminRepository.cs" />
     <Compile Include="Repository\SlideAdminRepository.cs" />
   </ItemGroup>
   <ItemGroup>
