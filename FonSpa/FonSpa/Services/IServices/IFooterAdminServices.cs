@@ -15,5 +15,6 @@ namespace FonSpa.Services.IServices
         Footer GetDetail(int id);
         bool Edit(Footer footer);
         bool? ChangeStatus(int id);
+        List<Footer> GetListFooter();
     }
 }

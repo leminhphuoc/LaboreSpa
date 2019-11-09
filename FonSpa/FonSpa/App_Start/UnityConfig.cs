@@ -21,7 +21,22 @@ namespace FonSpa
 
             container.RegisterType<IAccountAdminRepository, AccountAdminRepository>();
             container.RegisterType<IAccountAdminServices, AccountAdminServices>();
-
+            container.RegisterType<IProductAdminRepository, ProductAdminRepository>();
+            container.RegisterType<IProductAdminSerivces, ProductAdminSerivces>();
+            container.RegisterType<IServiceAdminRepository, ServiceAdminRepository>();
+            container.RegisterType<IServicesAdminServices, ServicesAdminServices>();
+            container.RegisterType<IContentAdminRepository, ContentAdminRepository>();
+            container.RegisterType<IContentServices, ContentServices>();
+            container.RegisterType<ICustomerAdminRepository, CustomerAdminRepository>();
+            container.RegisterType<ICustomerAdminServices, CustomerAdminServices>();
+            container.RegisterType<IMenuAdminRepository, MenuAdminRepository>();
+            container.RegisterType<IMenuAdminServices, MenuAdminServices>();
+            container.RegisterType<IFooterAdminServices, FooterAdminServices>();
+            container.RegisterType<IFooterAdminRepository, FooterAdminRepository>();
+            container.RegisterType<IContactClientServices, ContactClientServices>();
+            container.RegisterType<IContactAdminRepository, ContactAdminRepository>();
+            container.RegisterType<ISlideAdminServices, SlideAdminServices>();
+            container.RegisterType<ISlideAdminRepository, SlideAdminRepository>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

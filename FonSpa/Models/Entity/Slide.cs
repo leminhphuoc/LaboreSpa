@@ -20,7 +20,12 @@ namespace Models.Entity
         public string link { get; set; }
 
         [StringLength(250)]
-        public string description { get; set; }
+        public string title { get; set; }
+        [StringLength(250)]
+        public string subtitle { get; set; }
+
+        [StringLength(250)]
+        public string TextButton { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? createdDate { get; set; }

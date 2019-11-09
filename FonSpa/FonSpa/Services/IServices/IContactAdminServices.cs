@@ -13,5 +13,7 @@ namespace FonSpa.Services.IServices
         bool Delete(int id);
         Contact GetDetail(int id);
         bool Edit(Contact contact);
+        List<Contact> GetListContact();
+        bool? ChangeStatus(int id);
     }
 }

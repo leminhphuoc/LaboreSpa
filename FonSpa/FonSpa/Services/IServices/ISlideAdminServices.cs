@@ -14,5 +14,6 @@ namespace FonSpa.Services.IServices
         Slide GetDetail(int id);
         bool Edit(Slide slide);
         bool? ChangeStatus(int id);
+        List<Slide> GetListSlide();
     }
 }
