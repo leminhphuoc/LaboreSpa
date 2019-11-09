@@ -56,6 +56,7 @@
     <Compile Include="Entity\Content.cs" />
     <Compile Include="Entity\ContentCategory.cs" />
     <Compile Include="Entity\Customer.cs" />
+    <Compile Include="Entity\CustomerAccount.cs" />
     <Compile Include="Entity\C__MigrationHistory.cs" />
     <Compile Include="Entity\FonSpaDbContext.cs" />
     <Compile Include="Entity\Footer.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Entity\Service.cs" />
     <Compile Include="Entity\ServiceCategory.cs" />
     <Compile Include="Entity\Slide.cs" />
+    <Compile Include="Entity\Staff.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
     <Compile Include="IRepository\IContentAdminRepository.cs" />
@@ -85,6 +87,14 @@
     <Compile Include="Migrations\201911010814021_InitialCreate.cs" />
     <Compile Include="Migrations\201911010814021_InitialCreate.Designer.cs">
       <DependentUpon>201911010814021_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911090723162_[-AddSTaff].cs" />
+    <Compile Include="Migrations\201911090723162_[-AddSTaff].Designer.cs">
+      <DependentUpon>201911090723162_[-AddSTaff].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911090741293_[-AddCustomerAccount].cs" />
+    <Compile Include="Migrations\201911090741293_[-AddCustomerAccount].Designer.cs">
+      <DependentUpon>201911090741293_[-AddCustomerAccount].cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +125,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911010814021_InitialCreate.resx">
       <DependentUpon>201911010814021_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911090723162_[-AddSTaff].resx">
+      <DependentUpon>201911090723162_[-AddSTaff].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911090741293_[-AddCustomerAccount].resx">
+      <DependentUpon>201911090741293_[-AddCustomerAccount].cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

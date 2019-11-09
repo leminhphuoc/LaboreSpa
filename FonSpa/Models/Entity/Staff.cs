@@ -1,4 +1,4 @@
-namespace Models.Entity
+﻿namespace Models.Entity
 {
     using System;
     using System.Collections.Generic;
@@ -6,26 +6,23 @@ namespace Models.Entity
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Customer")]
-    public partial class Customer
+    [Table("Staff")]
+    public partial class Staff
     {
-        public long id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
 
         [StringLength(100)]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [StringLength(20)]
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
         [StringLength(100)]
-        public string address { get; set; }
-
-        [StringLength(100)]
-        public string token { get; set; }
+        public string Address { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? createdDate { get; set; }
@@ -34,5 +31,7 @@ namespace Models.Entity
         public DateTime? modifiedDate { get; set; }
 
         public bool? status { get; set; }
+
+        public long IdAccount { get; set; }
     }
 }

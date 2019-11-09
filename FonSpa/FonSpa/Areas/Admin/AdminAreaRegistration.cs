@@ -40,6 +40,9 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IContactAdminRepository, ContactAdminRepository>();
             container.RegisterType<ISlideAdminServices, SlideAdminServices>();
             container.RegisterType<ISlideAdminRepository, SlideAdminRepository>();
+            container.RegisterType<IServicesAdminServices, ServicesAdminServices>();
+            container.RegisterType<IServiceAdminRepository, ServiceAdminRepository>();
+
 
             container.RegisterType<IContactClientServices, ContactClientServices>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

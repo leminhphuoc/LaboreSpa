@@ -20,11 +20,10 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>UserName</th>
+                            <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Address</th>
-                            <th>Member</th>
                             <th>Status</th>
                             <th>#</th>
                         </tr>
@@ -36,38 +35,15 @@
                                 {
                                     <tr id="row_@item.id">
                                         <td>@item.id</td>
-                                        <td>@item.userName</td>
+                                        <td>@item.Name</td>
                                         <td>@item.email</td>
                                         <td>@item.phone</td>
                                         <td>@item.address</td>
-                                        <td>
-                                            @{
-                                                if (item.typeMember != null)
-                                                {
-                                                    if (item.typeMember == 1)
-                                                    {
-                                                        @: Silver
-                                                    }
-                                                    else if (item.typeMember == 2)
-                                                    {
-                                                        @: Gold
-                                                    }
-                                                    else if (item.typeMember == 3)
-                                                    {
-                                                        @: Diamond
-                                                    }
-                                                    else
-                                                    {
-                                                        @: New Member
-                                                    }
-                                                }
-                                            }
-                                        </td>
                                         <td><a href="#" class="btn-active" data-id="@item.id">@(item.status == true ? "Kích hoạt" : "Khóa")</a></td>
                                         <td>
-                                            <a href="/Admin/CustomerAdmin/Edit/@item.id">Sửa</a>
+                                            <a href="/Admin/CustomerAdmin/Edit/@item.id">Edit</a>
                                             /
-                                            @Ajax.ActionLink("Xóa", "Delete", new {@id = item.id} ,new AjaxOptions
+                                            @Ajax.ActionLink("Delete", "Delete", new {@id = item.id} ,new AjaxOptions
                                        {
                                            Confirm = "Bạn có muốn xoá bản ghi này?",
                                            OnComplete = "$('#row_" + @item.id + "').remove()",
