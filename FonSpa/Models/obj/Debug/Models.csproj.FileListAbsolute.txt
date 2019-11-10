@@ -40,3 +40,5 @@ E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.pdb
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.csprojAssemblyReference.cache
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.AddSTaff.resources
 D:\Tieuluanchuyennganh\FonSpa\Models\obj\Debug\Models.Migrations.AddCustomerAccount.resources
+E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.Migrations.AddSTaff.resources
+E:\GITHUB\Tieuluanchuyennganh1\FonSpa\Models\obj\Debug\Models.Migrations.AddCustomerAccount.resources
