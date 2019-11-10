@@ -9,8 +9,8 @@ namespace FonSpa.Areas.Admin.Controllers
 {
     public class AboutAdminController : Controller
     {
-        // GET: Admin/AboutAdmin
-        //private readonly Iabou _menuAdminServices;
+      
+        //private readonly IA _menuAdminServices;
         //public MenuAdminController(IMenuAdminServices menuAdminServices)
         //{
         //    _menuAdminServices = menuAdminServices;

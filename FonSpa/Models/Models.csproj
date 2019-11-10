@@ -70,6 +70,7 @@
     <Compile Include="Entity\ServiceCategory.cs" />
     <Compile Include="Entity\Slide.cs" />
     <Compile Include="Entity\Staff.cs" />
+    <Compile Include="IRepository\IAboutAdminRepository.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
     <Compile Include="IRepository\IContentAdminRepository.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="IRepository\IServiceAdminRepository.cs" />
     <Compile Include="IRepository\IServiceCategoryAdminRepository.cs" />
     <Compile Include="IRepository\ISlideAdminRepository.cs" />
+    <Compile Include="IRepository\IStaffAdminRepository.cs" />
     <Compile Include="Migrations\201911010814021_InitialCreate.cs" />
     <Compile Include="Migrations\201911010814021_InitialCreate.Designer.cs">
       <DependentUpon>201911010814021_InitialCreate.cs</DependentUpon>
@@ -98,6 +100,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AboutAdminRepository.cs" />
     <Compile Include="Repository\AccountAdminRepository.cs" />
     <Compile Include="Repository\ContactAdminRepository.cs" />
     <Compile Include="Repository\ContentAdminRepository.cs" />
@@ -112,6 +115,7 @@
     <Compile Include="Repository\ServiceAdminRepository.cs" />
     <Compile Include="Repository\ServiceCategoryAdminRepository.cs" />
     <Compile Include="Repository\SlideAdminRepository.cs" />
+    <Compile Include="Repository\StaffAdminRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

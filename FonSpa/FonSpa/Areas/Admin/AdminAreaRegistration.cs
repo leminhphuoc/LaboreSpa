@@ -42,6 +42,20 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<ISlideAdminRepository, SlideAdminRepository>();
             container.RegisterType<IServicesAdminServices, ServicesAdminServices>();
             container.RegisterType<IServiceAdminRepository, ServiceAdminRepository>();
+            container.RegisterType<IProductCategoryAdminServices, ProductCategoryAdminService>();
+            container.RegisterType<IProductCategoryAdminRepository, ProductCategoryAdminRepository>();
+            container.RegisterType<IAboutAdminServices, AboutAdminServices>();
+            container.RegisterType<IAboutAdminRepository, AboutAdminRepository>();
+            container.RegisterType<IStaffAdminServices, StaffAdminServices>();
+            container.RegisterType<IStaffAdminRepository, StaffAdminRepository>();
+            container.RegisterType<IContentCategoryAdminServices, ContentCategoryAdminServices>();
+            container.RegisterType<IContentCategoryAdminRepository, ContentCategoryAdminRepository>();
+            container.RegisterType<IServiceCategoryAdminServices, ServiceCategoryAdminServices>();
+            container.RegisterType<IServiceCategoryAdminRepository, ServiceCategoryAdminRepository>();
+            container.RegisterType<IMenuTypeSerivces, MenuTypeAdminServices>();
+            container.RegisterType<IMenuTypeAdminRepository, MenuTypeAdminRepository>();
+            container.RegisterType<IFooterAdminServices, FooterAdminServices>();
+            container.RegisterType<IFooterAdminRepository, FooterAdminRepository>();
 
 
             container.RegisterType<IContactClientServices, ContactClientServices>();
