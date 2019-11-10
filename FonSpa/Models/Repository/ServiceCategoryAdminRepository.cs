@@ -32,7 +32,6 @@ namespace Models.Repository
 
         public long AddServiceCategory(ServiceCategory servicecategory)
         {
-            servicecategory.status = false;
             servicecategory.createdDate = DateTime.Now;
             var AddServiceCategory = _db.ServiceCategories.Add(servicecategory);
             _db.SaveChanges();

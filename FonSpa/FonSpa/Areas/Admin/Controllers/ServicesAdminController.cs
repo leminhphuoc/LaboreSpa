@@ -1,4 +1,5 @@
-﻿using FonSpa.Services.IServices;
+﻿using FonSpa.Filter;
+using FonSpa.Services.IServices;
 using Models.Entity;
 using PagedList;
 using System;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
+    [AuthData]
     public class ServicesAdminController : Controller
     {
         // GET: Admin/ServicesAdmin
@@ -44,7 +46,7 @@ namespace FonSpa.Areas.Admin.Controllers
             {
                 var addSerivces = _serivcesAdminServices.AddService(serivces);
                 var idSerivces = addSerivces;
-                if (idSerivces == 0) ModelState.AddModelError("", "Thêm sản phẩm không thành công !");
+                if (idSerivces == 0) ModelState.AddModelError("", "Add About Fail !");
                 return RedirectToAction("Index");
             }
             return View(serivces);

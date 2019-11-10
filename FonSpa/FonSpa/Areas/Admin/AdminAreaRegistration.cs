@@ -54,8 +54,8 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IServiceCategoryAdminRepository, ServiceCategoryAdminRepository>();
             container.RegisterType<IMenuTypeSerivces, MenuTypeAdminServices>();
             container.RegisterType<IMenuTypeAdminRepository, MenuTypeAdminRepository>();
-            container.RegisterType<IFooterAdminServices, FooterAdminServices>();
-            container.RegisterType<IFooterAdminRepository, FooterAdminRepository>();
+            container.RegisterType<IFooterCategoryAdminServices, FooterCategoryAdminServices>();
+            container.RegisterType<IFooterCategoryAdminRepository, FooterCategoryAdminRepository>();
 
 
             container.RegisterType<IContactClientServices, ContactClientServices>();

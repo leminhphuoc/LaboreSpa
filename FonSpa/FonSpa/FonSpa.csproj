@@ -243,14 +243,18 @@
     <Compile Include="Areas\Admin\Controllers\AccountAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContentCategoryAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\FooterAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FooterCategoryAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuTypeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServicesCategoryAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlideAdminController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Asset\Admin\js\Plugin\ckfinder\App_Code\ConnectorConfig.cs" />
@@ -300,13 +304,18 @@
     <Compile Include="Services\Services\StaffAdminServices.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\Admin\Controller\AboutController.js" />
     <Content Include="Asset\Admin\Controller\AccountController.js" />
     <Content Include="Asset\Admin\Controller\ContactController.js" />
+    <Content Include="Asset\Admin\Controller\ContentCategory.js" />
     <Content Include="Asset\Admin\Controller\ContentController.js" />
     <Content Include="Asset\Admin\Controller\CustomerController.js" />
     <Content Include="Asset\Admin\Controller\FooterController.js" />
     <Content Include="Asset\Admin\Controller\MenuController.js" />
+    <Content Include="Asset\Admin\Controller\MenuType.js" />
+    <Content Include="Asset\Admin\Controller\ProductCategoryController.js" />
     <Content Include="Asset\Admin\Controller\ProductController.js" />
+    <Content Include="Asset\Admin\Controller\ServicesCategoryController.js" />
     <Content Include="Asset\Admin\Controller\ServicesController.js" />
     <Content Include="Asset\Admin\Controller\SlideController.js" />
     <Content Include="Asset\Admin\css\bootstrap.min.css" />
@@ -2544,6 +2553,24 @@
     <Content Include="Areas\Admin\Views\ServicesAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ServicesAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ServicesAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesCategoryAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesCategoryAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ServicesCategoryAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ContentCategoryAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContentCategoryAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ContentCategoryAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuTypeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuTypeAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuTypeAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Edit.cshtml" />
     <None Include="Asset\Admin\js\Plugin\ckfinder\packages.config" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\README.md" />
@@ -2647,13 +2674,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\AboutAdmin\" />
-    <Folder Include="Areas\Admin\Views\ContentCategoryAdmin\" />
     <Folder Include="Areas\Admin\Views\FooterTypeAdmin\" />
-    <Folder Include="Areas\Admin\Views\MenuTypeAdmin\" />
-    <Folder Include="Areas\Admin\Views\ProductCategoryAdmin\" />
-    <Folder Include="Areas\Admin\Views\ProductCategory\" />
-    <Folder Include="Areas\Admin\Views\ServicesCategoryAdmin\" />
     <Folder Include="Asset\Admin\js\Plugin\ckfinder\App_Data\" />
     <Folder Include="Data1\" />
   </ItemGroup>

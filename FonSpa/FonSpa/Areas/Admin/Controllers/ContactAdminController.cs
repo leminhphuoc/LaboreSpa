@@ -1,4 +1,5 @@
-﻿using FonSpa.Services.IServices;
+﻿using FonSpa.Filter;
+using FonSpa.Services.IServices;
 using Models.Entity;
 using PagedList;
 using System;
@@ -9,8 +10,10 @@ using System.Web.Mvc;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
+    [AuthData]
     public class ContactAdminController : Controller
     {
+
         private readonly IContactAdminServices _contactAdminServices;
         public ContactAdminController(IContactAdminServices contactAdminServices)
         {

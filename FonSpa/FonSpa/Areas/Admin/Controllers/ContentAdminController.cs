@@ -7,11 +7,14 @@ using System.Web.Mvc;
 using PagedList.Mvc;
 using PagedList;
 using Models.Entity;
+using FonSpa.Filter;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
+    [AuthData]
     public class ContentAdminController : Controller
     {
+
         private readonly IContentServices _contentServices;
         public ContentAdminController(IContentServices contentServices)
         {

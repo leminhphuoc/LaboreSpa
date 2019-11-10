@@ -32,7 +32,6 @@ namespace Models.Repository
 
         public long AddContentCategory(ContentCategory contentcategory)
         {
-            contentcategory.status = false;
             contentcategory.createdDate = DateTime.Now;
             var AddContentCategory = _db.ContentCategories.Add(contentcategory);
             _db.SaveChanges();

@@ -6,9 +6,11 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using Models.Entity;
+using FonSpa.Filter;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
+    [AuthData]
     public class ProductAdminController : Controller
     {
         private readonly IProductAdminSerivces _productAdminServices;
