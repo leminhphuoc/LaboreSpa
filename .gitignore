@@ -423,7 +423,6 @@ project.lock.json
 *.feature.cs
 *.feature.xlsx.*
 *.Specs_*.html
-*.suo
 
 
 #####
