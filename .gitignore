@@ -261,6 +261,7 @@ x64/
 *.pidb
 *.log
 *.scc
+*.suo
 
 # OS generated files #
 .DS_Store*
