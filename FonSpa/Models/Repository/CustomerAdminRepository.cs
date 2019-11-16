@@ -81,5 +81,9 @@ namespace Models.Repository
             return listCustomer.ToList();
         }
 
+        public int Count()
+        {
+            return _db.Customers.Count();
+        }
     }
 }

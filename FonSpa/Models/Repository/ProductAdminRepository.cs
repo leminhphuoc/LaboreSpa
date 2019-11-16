@@ -99,5 +99,11 @@ namespace Models.Repository
             return _db.ProductCategories.ToList();
         }
 
+        public int Count()
+        {
+            return _db.Products.Count();
+        }
+
+
     }
 }

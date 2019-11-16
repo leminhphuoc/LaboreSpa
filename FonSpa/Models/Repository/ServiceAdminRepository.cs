@@ -92,5 +92,10 @@ namespace Models.Repository
             return _db.ServiceCategories.ToList();
         }
 
+        public int Count()
+        {
+            return _db.Services.Count();
+        }
+
     }
 }

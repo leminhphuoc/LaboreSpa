@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Entity\About.cs" />
     <Compile Include="Entity\AccountAdmin.cs" />
+    <Compile Include="Entity\Bed.cs" />
+    <Compile Include="Entity\Booking.cs" />
     <Compile Include="Entity\Contact.cs" />
     <Compile Include="Entity\Content.cs" />
     <Compile Include="Entity\ContentCategory.cs" />
@@ -61,15 +63,19 @@
     <Compile Include="Entity\FonSpaDbContext.cs" />
     <Compile Include="Entity\Footer.cs" />
     <Compile Include="Entity\FooterCategory.cs" />
+    <Compile Include="Entity\IPAddress.cs" />
     <Compile Include="Entity\Menu.cs" />
     <Compile Include="Entity\MenuType.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\ProductCategory.cs" />
+    <Compile Include="Entity\Room.cs" />
     <Compile Include="Entity\Service.cs" />
     <Compile Include="Entity\ServiceCategory.cs" />
     <Compile Include="Entity\Slide.cs" />
     <Compile Include="Entity\Staff.cs" />
+    <Compile Include="Entity\UsefulInformation.cs" />
+    <Compile Include="Entity\VisitorByTime.cs" />
     <Compile Include="IRepository\IAboutAdminRepository.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
@@ -80,8 +86,10 @@
     <Compile Include="IRepository\IFooterCategoryAdminRepository.cs" />
     <Compile Include="IRepository\IMenuAdminRepository.cs" />
     <Compile Include="IRepository\IMenuTypeAdminRepository.cs" />
+    <Compile Include="IRepository\IIPAddressRepository.cs" />
     <Compile Include="IRepository\IProductAdminRepository.cs" />
     <Compile Include="IRepository\IProductCategoryAdminRepository.cs" />
+    <Compile Include="IRepository\IRoomRepository.cs" />
     <Compile Include="IRepository\IServiceAdminRepository.cs" />
     <Compile Include="IRepository\IServiceCategoryAdminRepository.cs" />
     <Compile Include="IRepository\ISlideAdminRepository.cs" />
@@ -98,20 +106,41 @@
     <Compile Include="Migrations\201911090741293_[-AddCustomerAccount].Designer.cs">
       <DependentUpon>201911090741293_[-AddCustomerAccount].cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911100806177_[-AddUsefulInformation].cs" />
+    <Compile Include="Migrations\201911100806177_[-AddUsefulInformation].Designer.cs">
+      <DependentUpon>201911100806177_[-AddUsefulInformation].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911100811098_[-AddIPAddress].cs" />
+    <Compile Include="Migrations\201911100811098_[-AddIPAddress].Designer.cs">
+      <DependentUpon>201911100811098_[-AddIPAddress].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911160611457_[-AddVisitorByTime].cs" />
+    <Compile Include="Migrations\201911160611457_[-AddVisitorByTime].Designer.cs">
+      <DependentUpon>201911160611457_[-AddVisitorByTime].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911160728255_[-AddRoomBedBooking].cs" />
+    <Compile Include="Migrations\201911160728255_[-AddRoomBedBooking].Designer.cs">
+      <DependentUpon>201911160728255_[-AddRoomBedBooking].cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AboutAdminRepository.cs" />
     <Compile Include="Repository\AccountAdminRepository.cs" />
+    <Compile Include="Repository\BedRepository.cs" />
+    <Compile Include="Repository\BookingRepository.cs" />
     <Compile Include="Repository\ContactAdminRepository.cs" />
     <Compile Include="Repository\ContentAdminRepository.cs" />
     <Compile Include="Repository\ContentCategoryAdminRepository.cs" />
     <Compile Include="Repository\CustomerAdminRepository.cs" />
     <Compile Include="Repository\FooterAdminRepository.cs" />
     <Compile Include="Repository\FooterCategoryAdminRepository.cs" />
+    <Compile Include="Repository\IPAddressRepository.cs" />
     <Compile Include="Repository\MenuAdminRepository.cs" />
     <Compile Include="Repository\MenuTypeAdminRepository.cs" />
+    <Compile Include="Repository\OrdersRepository.cs" />
     <Compile Include="Repository\ProductAdminRepository.cs" />
     <Compile Include="Repository\ProductCategoryAdminRepository.cs" />
+    <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\ServiceAdminRepository.cs" />
     <Compile Include="Repository\ServiceCategoryAdminRepository.cs" />
     <Compile Include="Repository\SlideAdminRepository.cs" />
@@ -135,6 +164,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911090741293_[-AddCustomerAccount].resx">
       <DependentUpon>201911090741293_[-AddCustomerAccount].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911100806177_[-AddUsefulInformation].resx">
+      <DependentUpon>201911100806177_[-AddUsefulInformation].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911100811098_[-AddIPAddress].resx">
+      <DependentUpon>201911100811098_[-AddIPAddress].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911160611457_[-AddVisitorByTime].resx">
+      <DependentUpon>201911160611457_[-AddVisitorByTime].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911160728255_[-AddRoomBedBooking].resx">
+      <DependentUpon>201911160728255_[-AddRoomBedBooking].cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

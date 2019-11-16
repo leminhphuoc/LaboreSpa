@@ -233,6 +233,7 @@ E:\GITHUB\Tieuluanchuyennganh1\FonSpa\FonSpa\obj\Debug\FonSpa.csproj.CoreCompile
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\FonSpa\obj\Debug\FonSpa.csproj.CopyComplete
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\FonSpa\obj\Debug\FonSpa.dll
 E:\GITHUB\Tieuluanchuyennganh1\FonSpa\FonSpa\obj\Debug\FonSpa.pdb
+D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.Http.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\FonSpa.dll.config
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\FonSpa.dll
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\FonSpa.pdb
@@ -365,7 +366,6 @@ D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.WebPages.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.WebPages.Deployment.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.WebPages.Razor.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Net.Http.Formatting.xml
-D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.Http.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.Http.WebHost.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\System.Web.Optimization.xml
 D:\Tieuluanchuyennganh\FonSpa\FonSpa\bin\Unity.Abstractions.pdb

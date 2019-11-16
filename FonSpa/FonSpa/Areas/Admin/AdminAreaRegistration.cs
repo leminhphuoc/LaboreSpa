@@ -57,6 +57,8 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IFooterCategoryAdminServices, FooterCategoryAdminServices>();
             container.RegisterType<IFooterCategoryAdminRepository, FooterCategoryAdminRepository>();
 
+            container.RegisterType<IIPAddressRepository, IPAddressRepository>();
+
 
             container.RegisterType<IContactClientServices, ContactClientServices>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

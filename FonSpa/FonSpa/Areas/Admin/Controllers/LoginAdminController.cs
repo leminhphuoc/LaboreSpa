@@ -10,7 +10,6 @@ using System.Web.Mvc;
 
 namespace FonSpa.Areas.Admin.Controllers
 {
-    [AuthData]
     public class LoginAdminController : Controller
     {
         private readonly IAccountAdminServices _accountAdminServices;

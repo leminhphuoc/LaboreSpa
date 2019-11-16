@@ -26,6 +26,8 @@ namespace Models.Entity
         [Column(TypeName = "xml")]
         public string moreImages { get; set; }
 
+        public DateTime ServingTime { get; set; }
+
         public decimal? price { get; set; }
 
         public decimal? promotionPrice { get; set; }

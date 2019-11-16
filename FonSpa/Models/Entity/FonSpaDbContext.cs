@@ -32,6 +32,12 @@ namespace Models.Entity
         public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<CustomerAccount> CustomerAccounts { get; set; }
+        public virtual DbSet<UsefulInformation> UsefulInformations { get; set; }
+        public virtual DbSet<IPAddress> IPAddresss { get; set; }
+        public virtual DbSet<VisitorByTime> VisitorByTimes { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<Bed> Beds { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

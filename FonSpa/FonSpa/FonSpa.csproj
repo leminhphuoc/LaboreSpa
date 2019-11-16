@@ -251,6 +251,7 @@
     <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuTypeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesAdminController.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Filter\AuthData.cs" />
+    <Compile Include="Filter\CountVisitor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2675,6 +2677,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\FooterTypeAdmin\" />
+    <Folder Include="Areas\Admin\Views\OrdersAdmin\" />
     <Folder Include="Asset\Admin\js\Plugin\ckfinder\App_Data\" />
     <Folder Include="Data1\" />
   </ItemGroup>
