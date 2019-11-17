@@ -241,6 +241,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BedAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentCategoryAdminController.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Areas\Admin\Controllers\OrdersAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoomAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesCategoryAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlideAdminController.cs" />
@@ -272,6 +274,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IServices\IAboutAdminServices.cs" />
     <Compile Include="Services\IServices\IAccountAdminServices.cs" />
+    <Compile Include="Services\IServices\IBedAdminServices.cs" />
     <Compile Include="Services\IServices\IContactAdminServices.cs" />
     <Compile Include="Services\IServices\IContactClientServices.cs" />
     <Compile Include="Services\IServices\IContentCategoryAdminServices.cs" />
@@ -283,12 +286,14 @@
     <Compile Include="Services\IServices\IMenuTypeSerivces.cs" />
     <Compile Include="Services\IServices\IProductAdminSerivces.cs" />
     <Compile Include="Services\IServices\IProductCategoryAdminServices.cs" />
+    <Compile Include="Services\IServices\IRoomAdminServices.cs" />
     <Compile Include="Services\IServices\IServiceCategoryAdminServices.cs" />
     <Compile Include="Services\IServices\IServicesAdminServices.cs" />
     <Compile Include="Services\IServices\ISlideAdminServices.cs" />
     <Compile Include="Services\IServices\IStaffAdminServices.cs" />
     <Compile Include="Services\Services\AboutAdminServices.cs" />
     <Compile Include="Services\Services\AccountAdminServices.cs" />
+    <Compile Include="Services\Services\BedAdminServices.cs" />
     <Compile Include="Services\Services\ContactAdminServices.cs" />
     <Compile Include="Services\Services\ContactClientServices.cs" />
     <Compile Include="Services\Services\ContentCategoryAdminServices.cs" />
@@ -300,6 +305,7 @@
     <Compile Include="Services\Services\MenuTypeAdminServices.cs" />
     <Compile Include="Services\Services\ProductAdminSerivces.cs" />
     <Compile Include="Services\Services\ProductCategoryAdminService.cs" />
+    <Compile Include="Services\Services\RoomAdminServices.cs" />
     <Compile Include="Services\Services\ServiceCategoryAdminServices.cs" />
     <Compile Include="Services\Services\ServicesAdminServices.cs" />
     <Compile Include="Services\Services\SlideAdminServices.cs" />
@@ -308,6 +314,7 @@
   <ItemGroup>
     <Content Include="Asset\Admin\Controller\AboutController.js" />
     <Content Include="Asset\Admin\Controller\AccountController.js" />
+    <Content Include="Asset\Admin\Controller\BedController.js" />
     <Content Include="Asset\Admin\Controller\ContactController.js" />
     <Content Include="Asset\Admin\Controller\ContentCategory.js" />
     <Content Include="Asset\Admin\Controller\ContentController.js" />
@@ -317,6 +324,7 @@
     <Content Include="Asset\Admin\Controller\MenuType.js" />
     <Content Include="Asset\Admin\Controller\ProductCategoryController.js" />
     <Content Include="Asset\Admin\Controller\ProductController.js" />
+    <Content Include="Asset\Admin\Controller\RoomController.js" />
     <Content Include="Asset\Admin\Controller\ServicesCategoryController.js" />
     <Content Include="Asset\Admin\Controller\ServicesController.js" />
     <Content Include="Asset\Admin\Controller\SlideController.js" />
@@ -2573,6 +2581,12 @@
     <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\FooterCategoryAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\RoomAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\RoomAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\RoomAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BedAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BedAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BedAdmin\Edit.cshtml" />
     <None Include="Asset\Admin\js\Plugin\ckfinder\packages.config" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Asset\Admin\js\Plugin\ckfinder\plugins\README.md" />

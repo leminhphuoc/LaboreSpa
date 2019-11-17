@@ -1,0 +1,71 @@
+﻿@model PagedList.IPagedList<Models.Entity.Bed>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    List<Models.Entity.Room> listRoom = ViewBag.listRoom;
+}
+
+@section jsFooter{
+    <script src="~/Asset/Admin/Controller/BedController.js"></script>
+}
+
+<section class="wrapper">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                List Bed 
+            </div>
+            <div class="row w3-res-tb">
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr id="row_@item.Id">
+                                        <td>@item.Id</td>
+                                        <td>@item.Name</td>
+                                        <td>
+                                        @{
+                                            foreach(var room in listRoom)
+                                            {
+                                                if(room.Id == item.IdRoom)
+                                                {
+                                                    @: @room.Name
+                                                }
+                                            }
+                                        }
+                                        </td>
+                                        <td><a href="#" class="btn-active" data-id="@item.Id">@(item.Status == true ? "Active" : "Empty")</a></td>
+                                        <td>
+                                            <a href="/Admin/BedAdmin/Edit/@item.Id">Edit</a>
+                                            /
+                                            @Ajax.ActionLink("Delete", "Delete", new {@id = item.Id } ,new AjaxOptions
+                                       {
+                                           Confirm = "Do you want delete this?",
+                                           OnComplete = "$('#row_" + @item.Id + "').remove()",
+                                           HttpMethod = "Delete"
+                                       })
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+

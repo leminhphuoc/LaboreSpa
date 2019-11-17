@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.IRepository
+namespace FonSpa.Services.IServices
 {
-    public interface IRoomRepository
+    public interface IRoomAdminServices
     {
+        List<Room> ListAll();
+        long AddRoom(Room room);
         Room GetDetail(int id);
-        List<Room> GetList();
-        int Add(Room room);
         bool Edit(Room room);
         bool Delete(int id);
         bool? ChangeStatus(int id);

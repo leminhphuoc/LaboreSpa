@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace Models.IRepository
 {
-    public interface IRoomRepository
+    public interface IBedRepository
     {
-        Room GetDetail(int id);
-        List<Room> GetList();
-        int Add(Room room);
-        bool Edit(Room room);
+        Bed GetDetail(int id);
+        List<Bed> GetList();
+        int Add(Bed Bed);
+        bool Edit(Bed Bed);
         bool Delete(int id);
         bool? ChangeStatus(int id);
+        Room GetRoom(int id);
+        List<Room> ListRoom();
     }
 }

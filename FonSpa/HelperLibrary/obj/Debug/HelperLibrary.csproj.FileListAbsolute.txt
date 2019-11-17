@@ -9,3 +9,4 @@ D:\Tieuluanchuyennganh\FonSpa\HelperLibrary\bin\Debug\HelperLibrary.pdb
 D:\Tieuluanchuyennganh\FonSpa\HelperLibrary\obj\Debug\HelperLibrary.csproj.CoreCompileInputs.cache
 D:\Tieuluanchuyennganh\FonSpa\HelperLibrary\obj\Debug\HelperLibrary.dll
 D:\Tieuluanchuyennganh\FonSpa\HelperLibrary\obj\Debug\HelperLibrary.pdb
+D:\Tieuluanchuyennganh\FonSpa\HelperLibrary\obj\Debug\HelperLibrary.csprojAssemblyReference.cache

@@ -13,7 +13,7 @@ namespace FonSpa.Controllers
     {
         private readonly IProductAdminSerivces _productAdminServices;
         private readonly IServicesAdminServices _servicesAdminServices;
-        private readonly IContentServices _contentServices;
+        //private readonly IContentServices _contentServices;
 
         public HomeController(IProductAdminSerivces productAdminServices, IServicesAdminServices servicesAdminServices , IContentServices contentServices)
         {

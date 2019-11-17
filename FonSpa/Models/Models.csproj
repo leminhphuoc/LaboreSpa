@@ -78,6 +78,7 @@
     <Compile Include="Entity\VisitorByTime.cs" />
     <Compile Include="IRepository\IAboutAdminRepository.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
+    <Compile Include="IRepository\IBedRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
     <Compile Include="IRepository\IContentAdminRepository.cs" />
     <Compile Include="IRepository\IContentCategoryAdminRepository.cs" />

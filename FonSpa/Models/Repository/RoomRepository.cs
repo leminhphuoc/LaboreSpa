@@ -1,4 +1,5 @@
 ﻿using Models.Entity;
+using Models.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Models.Repository
 {
-    public class RoomRepository
+    public class RoomRepository : IRoomRepository
     {
         private FonSpaDbContext _db = null;
 
@@ -40,6 +41,7 @@ namespace Models.Repository
         {
             var editRoom = _db.Rooms.Where(x => x.Id == room.Id).SingleOrDefault();
             editRoom.Name = room.Name;
+            editRoom.Status = room.Status;
             _db.SaveChanges();
             return true;
         }
@@ -53,6 +55,15 @@ namespace Models.Repository
                 _db.SaveChanges();
             }
             return true;
+        }
+
+        public bool? ChangeStatus(int id)
+        {
+            if (id == 0) return false;
+            var room = _db.Rooms.Find(id);
+            room.Status = !room.Status;
+            _db.SaveChanges();
+            return room.Status;
         }
     }
 }

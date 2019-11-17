@@ -56,6 +56,10 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IMenuTypeAdminRepository, MenuTypeAdminRepository>();
             container.RegisterType<IFooterCategoryAdminServices, FooterCategoryAdminServices>();
             container.RegisterType<IFooterCategoryAdminRepository, FooterCategoryAdminRepository>();
+            container.RegisterType<IRoomAdminServices, RoomAdminServices>();
+            container.RegisterType<IRoomRepository, RoomRepository>();
+            container.RegisterType<IBedRepository, BedRepository>();
+            container.RegisterType<IBedAdminServices, BedAdminServices>(); 
 
             container.RegisterType<IIPAddressRepository, IPAddressRepository>();
 
