@@ -1,11 +1,11 @@
 ﻿@{
     Layout = null;
-    
+    var listMenu = ViewBag.ListMenu;
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home 02</title>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="~/Asset/Client/images/icons/favicon-01.png" />
@@ -53,25 +53,13 @@
                                         English
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="#">
-                                        Japan
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        French
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="content-header">
                         <div class="logo-header">
-                            <a href="#" class="main-logo">
+                            <a href="/" class="main-logo">
                                 <img src="/Asset/Client/images/icons/logo-01.png" alt="IMG">
                             </a>
 
@@ -88,7 +76,7 @@
                             </a>
                         </div>
 
-                        @Html.Partial("_MainMenu")
+                        @{Html.RenderAction("MainMenu","Home");}
                     </div>
 
                     <div class="group-feature right-side">

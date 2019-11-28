@@ -41,6 +41,7 @@ namespace Models.Repository
         {
             var MenuTypeEdit = _db.MenuTypes.Where(x => x.id == menutype.id).SingleOrDefault();
             MenuTypeEdit.name = menutype.name;
+            MenuTypeEdit.ParentMenuID = menutype.ParentMenuID;
             _db.SaveChanges();
             return true;
         }
@@ -69,6 +70,11 @@ namespace Models.Repository
             var menutype = _db.MenuTypes.Where(x => x.name == name).SingleOrDefault();
             if (menutype != null) return true;
             return false;
+        }
+
+        public List<Menu> ListMenu()
+        {
+            return _db.Menus.ToList();
         }
     }
 }

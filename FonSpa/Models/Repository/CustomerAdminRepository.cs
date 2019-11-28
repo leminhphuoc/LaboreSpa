@@ -85,5 +85,10 @@ namespace Models.Repository
         {
             return _db.Customers.Count();
         }
+
+        public int CountByMonth(int month)
+        {
+            return _db.Customers.Where(x=>x.createdDate.Value.Month == month).Count();
+        }
     }
 }

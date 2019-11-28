@@ -5,6 +5,8 @@ using Models.IRepository;
 using Models.Repository;
 using FonSpa.Services.IServices;
 using FonSpa.Services.Services;
+using FonSpa.Services.IClientServices;
+using FonSpa.Services.ClientServices;
 
 namespace FonSpa.Areas.Admin
 {
@@ -59,12 +61,21 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IRoomAdminServices, RoomAdminServices>();
             container.RegisterType<IRoomRepository, RoomRepository>();
             container.RegisterType<IBedRepository, BedRepository>();
-            container.RegisterType<IBedAdminServices, BedAdminServices>(); 
+            container.RegisterType<IBedAdminServices, BedAdminServices>();
+            container.RegisterType<IBookingRepository, BookingRepository>();
+            container.RegisterType<IBookingAdminServices, BookingAdminServices>();
 
             container.RegisterType<IIPAddressRepository, IPAddressRepository>();
 
 
+
+
+            // Client
             container.RegisterType<IContactClientServices, ContactClientServices>();
+            container.RegisterType<IHomeServices, HomeServices>();
+            container.RegisterType<IProductServices, ProductServices>();
+            container.RegisterType<IServicesServices, ServicesServices>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             //Admin Account

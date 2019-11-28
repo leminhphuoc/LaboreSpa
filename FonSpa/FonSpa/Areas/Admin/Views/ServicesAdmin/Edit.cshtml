@@ -71,13 +71,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label class="control-label col-lg-3">Quantity</label>
-                                    <div class="col-lg-6">
-                                        @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
-                                    </div>
-                                </div>
+
                                 <div class="form-group ">
                                     <label class="control-label col-lg-3">Price</label>
                                     <div class="col-lg-6">
@@ -92,11 +86,23 @@
                                         @Html.EditorFor(model => model.promotionPrice, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label class="control-label col-lg-3">TopHot</label>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">Category</label>
                                     <div class="col-lg-6">
-                                        @Html.ValidationMessageFor(model => model.topHot, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.topHot, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                        <select id="ServingTime" name="ServingTime" class="form-control m-bot15">
+                                            @if (Model.ServingTime == 45)
+                                            {
+                                                <option value="45">45 Minutes</option>
+                                                <option value="90">90 Minutes</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="45">45 Minutes</option>
+                                                <option selected value="90">90 Minutes</option>
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group ">

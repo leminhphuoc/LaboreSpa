@@ -71,34 +71,32 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label class="control-label col-lg-3">Quantity</label>
-                                    <div class="col-lg-6">
-                                        @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
-                                    </div>
-                                </div>
+
                                 <div class="form-group ">
                                     <label class="control-label col-lg-3">Price</label>
                                     <div class="col-lg-6">
                                         @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                        @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0" } })
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="control-label col-lg-3">PromotionPrice</label>
                                     <div class="col-lg-6">
                                         @Html.ValidationMessageFor(model => model.promotionPrice, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.promotionPrice, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                                        @Html.EditorFor(model => model.promotionPrice, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0" } })
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <label class="control-label col-lg-3">TopHot</label>
+
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3">Serving Time</label>
                                     <div class="col-lg-6">
-                                        @Html.ValidationMessageFor(model => model.topHot, "", new { @class = "text-danger" })
-                                        @Html.EditorFor(model => model.topHot, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                            <select id="ServingTime" name="ServingTime" class="form-control m-bot15">
+                                                    <option value="45">45 Minutes</option>
+                                                    <option value="90">90 Minutes</option>
+                                            </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group ">
                                     <label class="control-label col-lg-3">Image</label>
                                     <div class="col-lg-6">
@@ -108,13 +106,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label class="control-label col-lg-3">Description</label>
+                                    <label class="control-label col-lg-3">Title</label>
                                     <div class="col-lg-6">
                                         <textarea class="form-control " id="description" name="description" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label class="control-label col-lg-3">Detail</label>
+                                    <label class="control-label col-lg-3">Description</label>
                                     <div class="col-lg-6">
                                         @Html.TextAreaFor(model => model.detail, new { htmlAttributes = new { @class = "form-control" }, id = "txtcontent" })
                                         @Html.ValidationMessageFor(model => model.detail, "", new { @class = "text-danger" })

@@ -27,7 +27,7 @@ namespace Models.Repository
 
         public List<Menu> GetListMenu()
         {
-            return _db.Menus.ToList();
+            return _db.Menus.OrderBy(x=>x.displayOrder).ToList();
         }
 
         public List<Menu> GetMenusByText(string searchString)

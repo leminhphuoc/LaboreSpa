@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Contact</title>
+    <title>@ViewBag.Tittle</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,28 +41,28 @@
     <header class="hun-header style-sticky layout-2">
         <div class="wrapper-header element-for-stick">
             <div class="logo-header">
-                <a href="#" class="main-logo">
+                <a href="/" class="main-logo">
                     <img src="/Asset/Client/images/icons/logo-02.png" alt="IMG">
                 </a>
 
-                <a href="#" class="mobile-logo">
+                <a href="/" class="mobile-logo">
                     <img src="/Asset/Client/images/icons/logo-02.png" alt="IMG">
                 </a>
 
-                <a href="#" class="sticky-logo">
+                <a href="/" class="sticky-logo">
                     <img src="/Asset/Client/images/icons/logo-02.png" alt="IMG">
                 </a>
 
-                <a href="#" class="retina-logo">
+                <a href="/" class="retina-logo">
                     <img src="/Asset/Client/images/icons/logo-02.png" alt="IMG">
                 </a>
             </div>
 
-            @Html.Partial("_MainMenu")
+            @{Html.RenderAction("MainMenu", "Home");}
 
             <div class="group-feature">
                 <div class="buttons-header d-none d-sm-block">
-                    <a href="booking.html" class="hun-button size-small shape-round style-fill-color">
+                    <a href="/booking" class="hun-button size-small shape-round style-fill-color">
                         Book now
                     </a>
                 </div>
@@ -89,7 +89,7 @@
 
                     <nav class="mobile-navigation">
                         <div class="logo-menu-mobile">
-                            <a href="#">
+                            <a href="/">
                                 <img src="/Asset/Client/images/icons/logo-02.png" alt="IMG">
                             </a>
                         </div>

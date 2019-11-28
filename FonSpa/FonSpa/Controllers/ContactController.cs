@@ -17,6 +17,7 @@ namespace FonSpa.Controllers
         // GET: Contact
         public ActionResult Index()
         {
+            ViewBag.Tittle = "Contact";
             var listContact = _contactClientServices.GetContacts();
             return View(listContact);
         }

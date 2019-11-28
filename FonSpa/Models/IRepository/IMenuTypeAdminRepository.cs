@@ -16,5 +16,6 @@ namespace Models.IRepository
         bool Delete(long id);
         List<MenuType> ListSearchMenuType(string searchString);
         bool CheckExits(string name);
+        List<Menu> ListMenu();
     }
 }

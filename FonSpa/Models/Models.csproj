@@ -79,6 +79,7 @@
     <Compile Include="IRepository\IAboutAdminRepository.cs" />
     <Compile Include="IRepository\IAccountAdminRepository.cs" />
     <Compile Include="IRepository\IBedRepository.cs" />
+    <Compile Include="IRepository\IBookingRepository.cs" />
     <Compile Include="IRepository\IContactAdminRepository.cs" />
     <Compile Include="IRepository\IContentAdminRepository.cs" />
     <Compile Include="IRepository\IContentCategoryAdminRepository.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Repository\ServiceCategoryAdminRepository.cs" />
     <Compile Include="Repository\SlideAdminRepository.cs" />
     <Compile Include="Repository\StaffAdminRepository.cs" />
+    <Compile Include="Repository\VisitorRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

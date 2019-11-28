@@ -15,5 +15,6 @@ namespace FonSpa.Services.IServices
         MenuType GetDetail(int id);
         bool Edit(MenuType menutype);
         bool Delete(int id);
+        List<Menu> ListMenu();
     }
 }

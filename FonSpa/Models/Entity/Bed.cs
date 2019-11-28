@@ -17,8 +17,6 @@
 
         [Required]
         public int IdRoom { get; set; }
-
-       
-        public int? IdBooking { get; set; }
+      
     }
 }

@@ -23,7 +23,7 @@ namespace Models.Repository
         {
             if (IpAddress == null) return false;
             if (_db.IPAddresss.Where(x => x.IP == IpAddress).SingleOrDefault() != null) return false;
-            var IP = new IPAddress() { IP = IpAddress };
+            var IP = new IPAddress() { IP = IpAddress , date = DateTime.Now};
             _db.IPAddresss.Add(IP);
             var Visitor = _db.UsefulInformations.Where(x=>x.Name == "Visitor").SingleOrDefault();
             Visitor.Value += 1;
@@ -36,6 +36,11 @@ namespace Models.Repository
             var visitor = _db.UsefulInformations.Where(x => x.Name == "Visitor").SingleOrDefault();
             var value = visitor.Value;
             return value;
+        }
+
+        public int CountByMonth(int month)
+        {
+            return _db.IPAddresss.Where(x => x.date.Month == month).Count();
         }
     }
 }

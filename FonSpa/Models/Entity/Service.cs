@@ -26,13 +26,11 @@ namespace Models.Entity
         [Column(TypeName = "xml")]
         public string moreImages { get; set; }
 
-        public DateTime ServingTime { get; set; }
+        public int ServingTime { get; set; }
 
         public decimal? price { get; set; }
 
         public decimal? promotionPrice { get; set; }
-
-        public int quantity { get; set; }
 
         public int? idCategory { get; set; }
 
@@ -46,9 +44,6 @@ namespace Models.Entity
         public DateTime? modifiDate { get; set; }
 
         public bool? status { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? topHot { get; set; }
 
         public int? viewCount { get; set; }
     }

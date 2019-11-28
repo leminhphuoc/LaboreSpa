@@ -32,7 +32,7 @@ namespace Models.Repository
 
         public long AddService(Service service)
         {
-            service.status = false;
+                
             service.createdDate = DateTime.Now;
             var addService = _db.Services.Add(service);
             _db.SaveChanges();
@@ -49,12 +49,11 @@ namespace Models.Repository
             serviceEdit.moreImages = service.moreImages;
             serviceEdit.price = service.price;
             serviceEdit.promotionPrice = service.promotionPrice;
-            serviceEdit.quantity = service.quantity;
             serviceEdit.idCategory = service.idCategory;
             serviceEdit.detail = service.detail;
             serviceEdit.modifiDate = DateTime.Now;
             serviceEdit.status = service.status;
-            serviceEdit.topHot = service.topHot;
+            serviceEdit.ServingTime = service.ServingTime;
             _db.SaveChanges();
             return true;
         }

@@ -65,5 +65,10 @@ namespace FonSpa.Services.Services
             var deleteSuccess = _menuTypeAdminRepository.Delete(id);
             return true;
         }
+
+        public List<Menu> ListMenu()
+        {
+            return _menuTypeAdminRepository.ListMenu();
+        }
     }
 }

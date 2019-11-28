@@ -26,11 +26,13 @@ namespace FonSpa.Areas.Admin.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 1);
             var listContentsPaged = listContent.ToPagedList(pageNumber, pageSize);
+            ViewBag.listMenu = _menuTypeSerivces.ListMenu();
             return View(listContentsPaged);
         }
 
         public ActionResult Create()
         {
+            ViewBag.listMenu = _menuTypeSerivces.ListMenu();
             return View();
         }
 
@@ -52,6 +54,7 @@ namespace FonSpa.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.listMenu = _menuTypeSerivces.ListMenu();
             var Contents = _menuTypeSerivces.GetDetail(id);
             if (Contents == null) return RedirectToAction("Index");
             return View(Contents);

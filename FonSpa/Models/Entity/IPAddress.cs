@@ -12,5 +12,7 @@
         public long Id { get; set; }
 
         public string IP { get; set; }
+
+        public DateTime date { get; set; }
     }
 }

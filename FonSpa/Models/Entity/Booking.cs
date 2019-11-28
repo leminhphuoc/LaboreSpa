@@ -18,5 +18,8 @@
 
         [Required]
         public long IdServices { get; set; }
+
+
+        public int? IdBed { get; set; }
     }
 }

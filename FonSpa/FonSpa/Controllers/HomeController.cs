@@ -1,4 +1,5 @@
 ﻿using FonSpa.Filter;
+using FonSpa.Services.IClientServices;
 using FonSpa.Services.IServices;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,26 @@ namespace FonSpa.Controllers
     [CountVisitor]
     public class HomeController : Controller
     {
-        private readonly IProductAdminSerivces _productAdminServices;
-        private readonly IServicesAdminServices _servicesAdminServices;
+
+        private readonly IHomeServices _homeServices;
         //private readonly IContentServices _contentServices;
 
-        public HomeController(IProductAdminSerivces productAdminServices, IServicesAdminServices servicesAdminServices , IContentServices contentServices)
+        public HomeController(IHomeServices homeServices)
         {
-
-            _productAdminServices = productAdminServices;
-            _servicesAdminServices = servicesAdminServices;
+            _homeServices = homeServices;
         }
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            //ViewBag.ListMenu = _homeServices.ListMenu();
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult MainMenu()
+        {
+            var model = _homeServices.ListMenu();
+            return PartialView(model);
         }
     }
 }

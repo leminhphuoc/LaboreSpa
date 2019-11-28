@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Title Page -->
+<div class="title-page" style="background-image: url(assets/images/title-page-01.png);">
+    <div class="container">
+        <h1 class="main-title">
+            Booking
+        </h1>
+
+        <ul class="breadcrumbs">
+            <li>
+                <a href="/">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                Booking
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end Title Page -->
+<!-- content booking-page -->
+<div class="sec--content--booking-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hun-element-image layout-1">
+                    <img src="/Asset/Client/images/single-image-06.jpg" alt="IMG">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <form class="book-service-form-02">
+                    <div class="heading-form">
+                        <h3 class="title-form">
+                            Book services
+                        </h3>
+
+                        <img class="line-heading" src="/Asset/Client/images/icons/wave-line-03.png" alt="IMG">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="wrap-input">
+                                <input type="text" placeholder="Full name *">
+
+                                <i class="icon-user"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="wrap-input">
+                                <input type="text" placeholder="Phone number *">
+
+                                <i class="icon-call-out"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="wrap-input js-call-datepicker" data-drop="down" data-drop-inside="true">
+                                <input type="text" name="date" autocomplete="off">
+
+                                <i class="icon-calendar"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="wrap-input js-call-select2" data-style="layout-1">
+                                <select>
+                                    <option>10:00 AM</option>
+                                    <option>11:00 AM</option>
+                                    <option>1:00 PM</option>
+                                    <option>2:00 PM</option>
+                                    <option>3:00 PM</option>
+                                    <option>4:00 PM</option>
+                                    <option>5:00 PM</option>
+                                    <option>6:00 PM</option>
+                                    <option>7:00 PM</option>
+                                    <option>8:00 PM</option>
+                                </select>
+
+                                <i class="icon-clock"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="wrap-input js-call-select2" data-style="layout-1">
+                                <select>
+                                    <option>Services *</option>
+                                    <option>Shoulder Massage</option>
+                                    <option>Hot Herbal Massage</option>
+                                    <option>Collagen Work</option>
+                                </select>
+
+                                <i class="lnr lnr-chevron-down"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="wrap-input js-call-select2" data-style="layout-1">
+                                <select>
+                                    <option>Select Employees</option>
+                                    <option>Lori Alvarez</option>
+                                    <option>Lisa Young</option>
+                                    <option>Julia Berry</option>
+                                </select>
+
+                                <i class="lnr lnr-chevron-down"></i>
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="wrap-input">
+                                <textarea placeholder="Massage *"></textarea>
+                            </label>
+
+                            <button class="hun-button size-normal shape-round style-fill-color">
+                                Make appointment
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="hun-element-work-time layout-1 text-center">
+                    <h5 class="title-element">
+                        SPA WORK TIME
+                    </h5>
+
+                    <div class="content-element">
+                        <span>
+                            Weekdays: 10am - 7pm
+                        </span>
+
+                        <span>
+                            Saturday: 10am - 5pm
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content booking-page -->

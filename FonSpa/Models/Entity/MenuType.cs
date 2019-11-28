@@ -13,5 +13,7 @@ namespace Models.Entity
 
         [StringLength(50)]
         public string name { get; set; }
+        
+        public int? ParentMenuID { get; set; }
     }
 }
