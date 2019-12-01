@@ -59,6 +59,7 @@ namespace FonSpa.Areas.Admin.Controllers
                 var bookingDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, time.Value, 0, 0);
                 var bedsList = _bookingAdminServices.GedBedsByTime(bookingDate);
                 ViewBag.bookingDate = bookingDate;
+                if (bedsList.Count == 0) return View("FullBed");
                 return View(bedsList);
             }
 
@@ -79,13 +80,22 @@ namespace FonSpa.Areas.Admin.Controllers
             }
             return View(booking);
         }
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id , DateTime? date = null, int? time = null)
         {
             var booking = _bookingAdminServices.GetDetail(id);
             ViewBag.listServices = _bookingAdminServices.ListService();
             ViewBag.listCustomer = _bookingAdminServices.ListCustomer();
             ViewBag.listRoom = _bookingAdminServices.ListRoom();
             ViewBag.listBed = _bookingAdminServices.ListBed();
+            ViewBag.emptyBedsList = null;
+            if (date != null)
+            {
+                var bookingDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, time.Value, 0, 0);
+                var emptyBedsList = _bookingAdminServices.GedBedsByTime(bookingDate);
+                ViewBag.bookingDate = bookingDate;
+                if (emptyBedsList.Count == 0) return View("FullBed");
+                ViewBag.emptyBedsList = emptyBedsList;
+            }
             if (booking == null) return RedirectToAction("Index");
             return View(booking);
         }

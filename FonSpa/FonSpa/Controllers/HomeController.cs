@@ -23,6 +23,12 @@ namespace FonSpa.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            ViewBag.SlideList = _homeServices.ListSlide();
+            ViewBag.roomsList = _homeServices.ListRoom();
+            ViewBag.bedsList = _homeServices.ListBed();
+            ViewBag.servicesList = _homeServices.ListServices();
+            ViewBag.FooterCategories = _homeServices.ListFooterCategory();
+            ViewBag.Footers = _homeServices.ListFooter();
             //ViewBag.ListMenu = _homeServices.ListMenu();
             return View();
         }
@@ -30,8 +36,19 @@ namespace FonSpa.Controllers
         [ChildActionOnly]
         public ActionResult MainMenu()
         {
-            var model = _homeServices.ListMenu();
-            return PartialView(model);
+            ViewBag.BlogCategories = _homeServices.ListContentCategory();
+            ViewBag.ServicesCategories = _homeServices.ListServiceCategory();
+            ViewBag.ProductsCategories = _homeServices.ListProductCategories();
+            var menus = _homeServices.ListMenu();
+            return PartialView(menus);
+        }
+
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            ViewBag.FooterCategories = _homeServices.ListFooterCategory();
+            var footers = _homeServices.ListFooter();
+            return PartialView(footers);
         }
     }
 }

@@ -1,6 +1,12 @@
-﻿@{
-    Layout = null;
-    var listMenu = ViewBag.ListMenu;
+﻿    @{
+        Layout = null;
+        var listMenu = ViewBag.ListMenu;
+        List<Models.Entity.Slide> listSlide = ViewBag.SlideList;
+        List<Models.Entity.Service> servicesList = ViewBag.servicesList;
+        List<Models.Entity.Bed> bedsList = ViewBag.bedsList;
+        List<Models.Entity.Room> roomsList = ViewBag.roomsList;
+        List<Models.Entity.FooterCategory> footerCategories = ViewBag.FooterCategories;
+        List<Models.Entity.Footer> footers = ViewBag.Footers;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -63,20 +69,20 @@
                                 <img src="/Asset/Client/images/icons/logo-01.png" alt="IMG">
                             </a>
 
-                            <a href="#" class="mobile-logo">
+                            <a href="/" class="mobile-logo">
                                 <img src="/Asset/Client/images/icons/logo-01.png" alt="IMG">
                             </a>
 
-                            <a href="#" class="sticky-logo">
+                            <a href="/" class="sticky-logo">
                                 <img src="/Asset/Client/images/icons/logo-01.png" alt="IMG">
                             </a>
 
-                            <a href="#" class="retina-logo">
+                            <a href="/" class="retina-logo">
                                 <img src="/Asset/Client/images/icons/logo-01.png" alt="IMG">
                             </a>
                         </div>
 
-                        @{Html.RenderAction("MainMenu","Home");}
+                        @{Html.RenderAction("MainMenu", "Home");}
                     </div>
 
                     <div class="group-feature right-side">
@@ -117,100 +123,52 @@
         <div class="sec--main-slider--home-1">
             <div class="hun-element-main-slider layout-1">
                 <div class="main-slider js-call-slick" data-animate="true">
-                    <div class="slide-slick" data-slick='{"fade": true, "speed": 900, "dots": true, "arrows": false, "autoplay": true, "autoplaySpeed": 5000, "infinite": true, "slidesToShow": 1, "slidesToScroll": 1}'>
+                    <div class="slide-slick" data-slick='{"fade": true, "speed": 900, "dots": true, "arrows": false, "autoplay": true, "autoplaySpeed": 4500, "infinite": true, "slidesToShow": 1, "slidesToScroll": 1}'>
+                        @foreach (var slide in listSlide)
+                        {
+                            <div class="item-slick full-height-with-header" style="background-image: url('@slide.image');">
+                                <div class="content-slide">
+                                    <div class="subtitle-slide" data-appear="slideInDown" data-delay="800">
+                                        @slide.subtitle
+                                    </div>
 
-                        <div class="item-slick full-height-with-header" style="background-image: url('/Asset/Client/images/slide-01.jpg');">
-                            <div class="content-slide">
-                                <div class="subtitle-slide" data-appear="slideInDown" data-delay="800">
-                                    wellcome Girl spring
-                                </div>
+                                    <h2 class="title-slide" data-appear="slideInUp" data-delay="0">
+                                        @slide.title
+                                    </h2>
 
-                                <h2 class="title-slide" data-appear="slideInUp" data-delay="0">
-                                    Skin Regeneration
-                                </h2>
-
-                                <div class="buttons-slide" data-appear="zoomIn" data-delay="1600">
-                                    <a href="#" class="hun-button size-normal style-border-light shape-round">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-slick full-height-with-header" style="background-image: url('/Asset/Client/images/slide-03.jpg');">
-                            <div class="content-slide">
-                                <div class="subtitle-slide" data-appear="fadeInDown" data-delay="800">
-                                    Treatment of Body
-                                </div>
-
-                                <h2 class="title-slide" data-appear="flipInX" data-delay="0">
-                                    Products Nature
-                                </h2>
-
-                                <div class="buttons-slide" data-appear="fadeInUp" data-delay="1600">
-                                    <a href="#" class="hun-button size-normal style-border-light shape-round">
-                                        Read More
-                                    </a>
+                                    <div class="buttons-slide" data-appear="zoomIn" data-delay="1600">
+                                        <a href="@slide.link" class="hun-button size-normal style-border-light shape-round">
+                                            @slide.TextButton
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
 
-                        <div class="item-slick full-height-with-header" style="background-image: url('/Asset/Client/images/slide-04.jpg');">
-                            <div class="content-slide">
-                                <div class="subtitle-slide" data-appear="fadeInRight" data-delay="800">
-                                    Breakthrough power
-                                </div>
 
-                                <h2 class="title-slide" data-appear="fadeInLeft" data-delay="0">
-                                    Multi Rejuvenation
-                                </h2>
-
-                                <div class="buttons-slide" data-appear="rotateIn" data-delay="1600">
-                                    <a href="#" class="hun-button size-normal style-border-light shape-round">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item-slick full-height-with-header" style="background-image: url('/Asset/Client/images/slide-02.jpg');">
-                            <div class="content-slide">
-                                <div class="subtitle-slide" data-appear="rotateInDownRight" data-delay="800">
-                                    Spa & Beauty
-                                </div>
-
-                                <h2 class="title-slide" data-appear="rotateInUpLeft" data-delay="0">
-                                    Time To Relax
-                                </h2>
-
-                                <div class="buttons-slide" data-appear="zoomIn" data-delay="1600">
-                                    <a href="#" class="hun-button size-normal style-border-light shape-round">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="dots-slick"></div>
                 </div>
 
                 <div class="social-slider">
-                    <a href="#" class="item-social">
-                        <i class="icon-social-facebook"></i>
-                    </a>
-
-                    <a href="#" class="item-social">
-                        <i class="icon-social-twitter"></i>
-                    </a>
-
-                    <a href="#" class="item-social">
-                        <i class="icon-social-dribbble"></i>
-                    </a>
-
-                    <a href="#" class="item-social">
-                        <i class="icon-social-tumblr"></i>
-                    </a>
+                    @foreach (var footer in footers)
+                    {
+                        foreach (var category in footerCategories)
+                        {
+                            if (category.name == "Social")
+                            {
+                                if (category.id == footer.typeId)
+                                {
+                                    <a href="@footer.link" class="item-social">
+                                        <i class="@footer.Icon"></i>
+                                    </a>
+                                }
+                            }
+                        }
+                    }
+                   
                 </div>
             </div>
         </div>
@@ -336,48 +294,91 @@
             <div class="container">
                 <div class="row no-gutters justify-content-end">
                     <div class="col-lg-6">
-                        <form class="book-service-form-01 no-border">
-                            <div class="heading-form">
-                                <h3 class="title-form">
-                                    Book services
-                                </h3>
+                        
+                            @using (Html.BeginForm("CreateBooking", "Booking", FormMethod.Post, new { @class = "book-service-form-01 no-border" }))
+                            {
+                                <div class="heading-form">
+                                    <h3 class="title-form">
+                                        Book services
+                                    </h3>
 
-                                <img class="line-heading" src="~/Asset/Client/images/icons/wave-line-03.png" alt="IMG">
-                            </div>
+                                    <img class="line-heading" src="~/Asset/Client/images/icons/wave-line-03.png" alt="IMG">
+                                </div>
 
-                            <label class="wrap-input">
-                                <input type="text" placeholder="Your full name *">
+                                <label class="wrap-input">
+                                    <input required id="name" name="name" type="text" placeholder="Your full name *">
 
-                                <i class="icon-user"></i>
-                            </label>
+                                    <i class="icon-user"></i>
+                                </label>
 
-                            <label class="wrap-input">
-                                <input type="text" placeholder="Your phone number *">
+                                <label class="wrap-input">
+                                    <input required id="phone" name="phone" type="text" pattern="(09|01[2|6|8|9])+([0-9]{8})\b" placeholder="Your phone number *">
 
-                                <i class="icon-call-out"></i>
-                            </label>
+                                    <i class="icon-call-out"></i>
+                                </label>
 
-                            <label class="wrap-input js-call-select2" data-style="layout-1">
-                                <select>
-                                    <option>Choose a service *</option>
-                                    <option>Shoulder Massage</option>
-                                    <option>Hot Herbal Massage</option>
-                                    <option>Collagen Work</option>
-                                </select>
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="IdServices" name="IdServices">
+                                        <option value="0">Services *</option>
+                                        @foreach (var service in servicesList)
+                                        {
+                                            <option value="@service.id">@service.name</option>
+                                        }
 
-                                <i class="lnr lnr-chevron-down"></i>
-                            </label>
+                                    </select>
 
-                            <label class="wrap-input js-call-datepicker" data-drop="down" data-drop-inside="true">
-                                <input type="text" name="date" autocomplete="off">
+                                    <i class="lnr lnr-chevron-down"></i>
+                                </label>
 
-                                <i class="lnr lnr-chevron-down"></i>
-                            </label>
 
-                            <button class="hun-button size-normal shape-round style-fill-color">
-                                Make appointment
-                            </button>
-                        </form>
+
+                                <label class="wrap-input js-call-datepicker" data-drop="down" data-drop-inside="true">
+                                    <input id="ArrivalTime"  type="text" name="ArrivalTime" autocomplete="off">
+
+                                    <i class="lnr lnr-chevron-down"></i>
+                                </label>
+
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="time" name="time">
+                                        <option value="8">8:00 AM</option>
+                                        <option value="9">9:00 AM</option>
+                                        <option value="10">10:00 AM</option>
+                                        <option value="11">11:00 AM</option>
+                                        <option value="13">1:00 PM</option>
+                                        <option value="14">2:00 PM</option>
+                                        <option value="15">3:00 PM</option>
+                                        <option value="16">4:00 PM</option>
+                                        <option value="17">5:00 PM</option>
+                                        <option value="18">6:00 PM</option>
+                                    </select>
+
+                                    <i class="icon-clock"></i>
+                                </label>
+
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="IdBed" name="IdBed">
+                                        <option value="0">Select Spa Room-Bed *</option>
+                                        @foreach (var room in roomsList)
+                                        {
+                                            foreach (var bed in bedsList)
+                                            {
+                                                if (bed.IdRoom == room.Id)
+                                                {
+                                                    <option value="@bed.Id">@room.Name : @bed.Name</option>
+                                                }
+
+                                            }
+
+                                        }
+                                    </select>
+
+                                    <i class="lnr lnr-chevron-down"></i>
+                                </label>
+
+                                <button class="hun-button size-normal shape-round style-fill-color">
+                                    Make appointment
+                                </button>
+                            }
                     </div>
                 </div>
             </div>
@@ -399,222 +400,65 @@
                 <div class="hun-element-service layout-1">
                     <div class="slide-element js-call-slick">
                         <div class="slide-slick" data-slick='{"dots": false, "arrows": true, "autoplay": false, "infinite": true, "slidesToShow": 3, "slidesToScroll": 1, "responsive": [{"breakpoint": 1199, "settings": {"slidesToShow": 2, "slidesToScroll": 1}}, {"breakpoint": 991, "settings": {"slidesToShow": 2, "slidesToScroll": 1}}, {"breakpoint": 767, "settings": {"slidesToShow": 1, "slidesToScroll": 1}}, {"breakpoint": 575, "settings": {"slidesToShow": 1, "slidesToScroll": 1}}]}'>
-
-                            <div class="item-slick">
-                                <div class="item-element">
-                                    <div class="pic-item">
-                                        <a href="service-detail.html" class="wrap-pic">
-                                            <img src="~/Asset/Client/images/service-01.jpg" alt="IMG">
-                                        </a>
-                                    </div>
-
-                                    <div class="text-item">
-                                        <h4 class="title-item">
-                                            <a href="service-detail.html">
-                                                Shoulder Massage
+                            @foreach (var item in servicesList)
+                            {
+                                <div class="item-slick">
+                                    <div class="item-element">
+                                        <div class="pic-item">
+                                            <a href="service-detail.html" class="wrap-pic">
+                                                <img style="width:245px;height:245px" src="@item.image" alt="IMG">
                                             </a>
-                                        </h4>
-
-                                        <div class="meta-info-item">
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-money-box"></i>
-                                                $25.00
-                                            </span>
-
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-alarm-check"></i>
-                                                45 Minutes
-                                            </span>
                                         </div>
 
-                                        <div class="description-item">
-                                            Best for office staff or those who have to sit long hours on bus/plane.
+                                        <div class="text-item">
+                                            <h4 class="title-item">
+                                                <a href="service-detail.html">
+                                                    @item.name
+                                                </a>
+                                            </h4>
+
+                                            <div class="meta-info-item">
+                                                <span class="item-info">
+                                                    <i class="zmdi zmdi-money-box"></i>
+                                                    $@item.price
+                                                </span>
+
+                                                <span class="item-info">
+                                                    <i class="zmdi zmdi-alarm-check"></i>
+                                                    @item.ServingTime Minutes
+                                                </span>
+                                            </div>
+
+                                            <div class="description-item">
+                                                @item.description
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="foot-item">
-                                        <div class="author-item">
-                                            <a href="#" class="pic-author">
-                                                <img src="~/Asset/Client/images/ava-01.jpg" alt="IMG">
-                                            </a>
-
-                                            <span class="text-author">
-                                                <a href="#" class="name-author">
-                                                    Victoria Webb
+                                        <div class="foot-item">
+                                            <div class="author-item">
+                                                <a href="#" class="pic-author">
+                                                    <img src="~/Asset/Client/images/ava-01.jpg" alt="IMG">
                                                 </a>
 
-                                                Spa Therapist
-                                            </span>
-                                        </div>
+                                                <span class="text-author">
+                                                    <a href="#" class="name-author">
+                                                        Victoria Webb
+                                                    </a>
 
-                                        <a href="booking.html" class="link-item">
-                                            Book now
-                                        </a>
+                                                    Spa Therapist
+                                                </span>
+                                            </div>
+
+                                            <a href="booking.html" class="link-item">
+                                                Book now
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
 
-                            <div class="item-slick">
-                                <div class="item-element">
-                                    <div class="pic-item">
-                                        <a href="service-detail.html" class="wrap-pic">
-                                            <img src="~/Asset/Client/images/service-02.jpg" alt="IMG">
-                                        </a>
-                                    </div>
 
-                                    <div class="text-item">
-                                        <h4 class="title-item">
-                                            <a href="service-detail.html">
-                                                Hot Herbal Massage
-                                            </a>
-                                        </h4>
-
-                                        <div class="meta-info-item">
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-money-box"></i>
-                                                $37.00
-                                            </span>
-
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-alarm-check"></i>
-                                                75/90 Minutes
-                                            </span>
-                                        </div>
-
-                                        <div class="description-item">
-                                            Herbal compress is applied during the massage to release muscle tension.
-                                        </div>
-                                    </div>
-
-                                    <div class="foot-item">
-                                        <div class="author-item">
-                                            <a href="#" class="pic-author">
-                                                <img src="~/Asset/Client/images/ava-02.jpg" alt="IMG">
-                                            </a>
-
-                                            <span class="text-author">
-                                                <a href="#" class="name-author">
-                                                    Christine Wells
-                                                </a>
-
-                                                Spa Therapist
-                                            </span>
-                                        </div>
-
-                                        <a href="booking.html" class="link-item">
-                                            Book now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item-slick">
-                                <div class="item-element">
-                                    <div class="pic-item">
-                                        <a href="service-detail.html" class="wrap-pic">
-                                            <img src="~/Asset/Client/images/service-03.jpg" alt="IMG">
-                                        </a>
-                                    </div>
-
-                                    <div class="text-item">
-                                        <h4 class="title-item">
-                                            <a href="service-detail.html">
-                                                Collagen Work
-                                            </a>
-                                        </h4>
-
-                                        <div class="meta-info-item">
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-money-box"></i>
-                                                $52.00
-                                            </span>
-
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-alarm-check"></i>
-                                                70 Minutes
-                                            </span>
-                                        </div>
-
-                                        <div class="description-item">
-                                            A collagen treatment will nourish your skin well, leaving a younger looking face.
-                                        </div>
-                                    </div>
-
-                                    <div class="foot-item">
-                                        <div class="author-item">
-                                            <a href="#" class="pic-author">
-                                                <img src="~/Asset/Client/images/ava-03.jpg" alt="IMG">
-                                            </a>
-
-                                            <span class="text-author">
-                                                <a href="#" class="name-author">
-                                                    Denise Duncan
-                                                </a>
-
-                                                Spa Therapist
-                                            </span>
-                                        </div>
-
-                                        <a href="booking.html" class="link-item">
-                                            Book now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item-slick">
-                                <div class="item-element">
-                                    <div class="pic-item">
-                                        <a href="service-detail.html" class="wrap-pic">
-                                            <img src="~/Asset/Client/images/service-04.jpg" alt="IMG">
-                                        </a>
-                                    </div>
-
-                                    <div class="text-item">
-                                        <h4 class="title-item">
-                                            <a href="service-detail.html">
-                                                Natural Skin Care
-                                            </a>
-                                        </h4>
-
-                                        <div class="meta-info-item">
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-money-box"></i>
-                                                $37.00
-                                            </span>
-
-                                            <span class="item-info">
-                                                <i class="zmdi zmdi-alarm-check"></i>
-                                                60 Minutes
-                                            </span>
-                                        </div>
-
-                                        <div class="description-item">
-                                            Our greatly popular natural facial care using fruits and herbal plants
-                                        </div>
-                                    </div>
-
-                                    <div class="foot-item">
-                                        <div class="author-item">
-                                            <a href="#" class="pic-author">
-                                                <img src="~/Asset/Client/images/ava-04.jpg" alt="IMG">
-                                            </a>
-
-                                            <span class="text-author">
-                                                <a href="#" class="name-author">
-                                                    Joan Hansen
-                                                </a>
-
-                                                Spa Therapist
-                                            </span>
-                                        </div>
-
-                                        <a href="booking.html" class="link-item">
-                                            Book now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
 
                         <div class="arrows-slick">
@@ -626,7 +470,7 @@
                 </div>
 
                 <div class="buttons-section">
-                    <a href="services-01.html" class="hun-button size-normal style-border-color shape-round">
+                    <a href="/serviceshome" class="hun-button size-normal style-border-color shape-round">
                         View All
                     </a>
                 </div>
@@ -840,96 +684,10 @@
         </div>
         <!-- end our-team home-2 -->
         <!-- Footer -->
-        <footer class="hun-footer layout-1 parallax100" style="background-image: url('/Asset/Client/images/bg-02.jpg');">
-            <div class="container">
-                <div class="content-footer text-center">
-                    <div class="logo-footer">
-                        <a href="#">
-                            <img src="~/Asset/Client/images/icons/logo-footer-01.png" alt="IMG">
-                        </a>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="hun-widget-info layout-1">
-                                <ul>
-                                    <li>
-                                        <i class="icon-map"></i>
-                                        487 Eighth Avenue West Street
-                                    </li>
-
-                                    <li>
-                                        <i class="icon-call-out"></i>
-                                        <a href="#">+(156)1800-366-666</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="hun-widget-info layout-1">
-                                <ul>
-                                    <li>
-                                        <i class="icon-envelope"></i>
-                                        <a href="#">labore.spa@gmail.com</a>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon-globe"></i>
-                                        <a href="#">www.labore.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="hun-widget-info layout-1">
-                                <ul>
-                                    <li>
-                                        <i class="icon-clock"></i>
-                                        Weekdays: 10AM – 9PM
-                                    </li>
-
-                                    <li>
-                                        <i class="icon-clock"></i>
-                                        Saturday : 10AM – 5PM
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="subscribe-form-01">
-                        <input type="text" placeholder="Enter your email">
-
-                        <button>
-                            Subscribe
-                        </button>
-                    </form>
-
-                    <div class="hun-element-social layout-1">
-                        <a href="#" class="item-social">
-                            <i class="icon-social-twitter"></i>
-                        </a>
-
-                        <a href="#" class="item-social">
-                            <i class="icon-social-facebook"></i>
-                        </a>
-
-                        <a href="#" class="item-social">
-                            <i class="icon-social-dribbble"></i>
-                        </a>
-
-                        <a href="#" class="item-social">
-                            <i class="icon-social-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @{Html.RenderAction("Footer", "Home");}
         <!-- end Footer -->
 
-    </div>
+
 
     <!--===============================================================================================-->
     <script src="~/Asset/Client/libs/jquery/jquery-1.11.0.min.js"></script>

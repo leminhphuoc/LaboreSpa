@@ -30,9 +30,13 @@ namespace Models.Repository
             return _db.Slides.ToList();
         }
 
+        public List<Slide> GetListTrue()
+        {
+            return _db.Slides.Where(x=>x.status == true).OrderBy(x=>x.displayOrder).ToList();
+        }
+
         public long AddSlide(Slide slide)
         {
-            slide.status = false;
             slide.createdDate = DateTime.Now;
             var addSlide = _db.Slides.Add(slide);
             _db.SaveChanges();

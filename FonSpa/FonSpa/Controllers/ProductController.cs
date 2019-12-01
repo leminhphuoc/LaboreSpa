@@ -26,6 +26,16 @@ namespace FonSpa.Controllers
             return View(listProductPaged);
         }
 
+        public ActionResult ListByCategory(int? page, string searchString = null, int idCategory = 0)
+        {
+            ViewBag.Tittle = "Products";
+            var listProduct = _productServices.ListByCategory(idCategory);
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            var listProductPaged = listProduct.ToPagedList(pageNumber, pageSize);
+            return View(listProductPaged);
+        }
+
         public ActionResult Detail(long id)
         {
             var product = _productServices.GetDetail(id);

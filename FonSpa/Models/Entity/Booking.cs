@@ -21,5 +21,8 @@
 
 
         public int? IdBed { get; set; }
+
+        [StringLength(2000)]
+        public string Message { get; set; }
     }
 }

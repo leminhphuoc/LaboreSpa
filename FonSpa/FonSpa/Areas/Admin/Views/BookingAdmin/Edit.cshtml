@@ -4,6 +4,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
     List<Models.Entity.Customer> listCustomer = ViewBag.listCustomer;
     List<Models.Entity.Service> listServices = ViewBag.listServices;
+    List<Models.Entity.Room> listRoom = ViewBag.listRoom;
+    List<Models.Entity.Bed> listBed = ViewBag.listBed;
 
 }
 
@@ -22,50 +24,126 @@
                         <div class="form">
 
                             @*<div class="form">*@
+                            @if (ViewBag.emptyBedsList == null)
+                            {
+                                using (Html.BeginForm("Edit", "BookingAdmin", FormMethod.Get, new { @class = "cmxform form-horizontal", @id = "signupForm" }))
+                                {
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-3">Arrival Day</label>
+                                        <div class="col-lg-6">
+                                            @*<input class="form-control " id="username" name="username" type="text">*@
 
+                                            <input required type="date" name="date" id="date" class="form-control" value="@Model.ArrivalTime.ToString("yyyy/MM/dd")" min="@DateTime.Now.ToString("yyyy/MM/dd")" max="@DateTime.Now.AddDays(7).ToString("yyyy/MM/dd")" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-3">Arrival Time</label>
+                                        <div class="col-lg-6">
+                                            <select id="time" name="time" class="form-control m-bot15">
+                                                <option value="8">08:00 AM</option>
+                                                <option value="9">09:00 AM</option>
+                                                <option value="10">10:00 AM</option>
+                                                <option value="11">11:00 AM</option>
+                                                <option value="13">01:00 PM</option>
+                                                <option value="14">02:00 PM</option>
+                                                <option value="15">03:00 PM</option>
+                                                <option value="16">04:00 PM</option>
+                                                <option value="17">05:00 PM</option>
+                                                <option value="18">06:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-3 col-lg-6">
+                                            <button class="btn btn-primary" type="submit">Save</button>
+                                            <button class="btn btn-default" type="button">Cancel</button>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
                             @*<form  method="get" action="" novalidate="novalidate">*@
                             @using (Html.BeginForm("Edit", "BookingAdmin", FormMethod.Post, new { @class = "cmxform form-horizontal", @id = "signupForm" }))
                             {
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="form-group ">
-                                    <label class="control-label col-lg-3">Service</label>
-                                    <div class="col-lg-6">
-                                        <select id="IdServices" name="IdServices" class="form-control m-bot15">
-                                            @foreach (var services in listServices)
-                                            {
-                                                <option value="@services.id">@services.name</option>
+                                if (ViewBag.emptyBedsList != null)
+                                {
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-3">Arrival Day</label>
+                                        <div class="col-lg-6">
+                                            @{
+                                                DateTime bookingDate = ViewBag.bookingDate;
                                             }
-                                        </select>
+                                            @*<input class="form-control " id="username" name="username" type="text">*@
+                                            <input required type="datetime-local" name="ArrivalTime" id="ArrivalTime" class="form-control" value="@bookingDate.ToString("s")" readonly />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3">Customer</label>
-                                    <div class="col-lg-6">
-                                        <select id="IdCustomer" name="IdCustomer" class="form-control m-bot15">
-                                            @foreach (var customer in listCustomer)
-                                            {
-                                                <option value="@customer.id">@customer.Name</option>
-                                            }
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-lg-3">Arrival Time</label>
-                                    <div class="col-lg-6">
-                                        @*<input class="form-control " id="username" name="username" type="text">*@
-                                        @Html.ValidationMessageFor(model => model.ArrivalTime, "", new { @class = "text-danger" })
-                                        <input required type="datetime-local" name="ArrivalTime" id="ArrivalTime" value="@Model.ArrivalTime.ToString("s")"  class = "form-control" min = "@DateTime.Now.ToString("s")" step="1"/>  
+                                    <div class="form-group ">
+                                        <label class="control-label col-lg-3">Service</label>
+                                        <div class="col-lg-6">
+                                            <select id="IdServices" name="IdServices" class="form-control m-bot15">
+                                                @foreach (var services in listServices)
+                                                {
+                                                    <option value="@services.id">@services.name</option>
+                                                }
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="col-lg-offset-3 col-lg-6">
-                                        <button class="btn btn-primary" type="submit">Save</button>
-                                        <button class="btn btn-default" type="button">Cancel</button>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-3">Customer</label>
+                                        <div class="col-lg-6">
+                                            <select id="IdCustomer" name="IdCustomer" class="form-control m-bot15">
+                                                @foreach (var customer in listCustomer)
+                                                {
+                                                    <option value="@customer.id">@customer.Name - @customer.phone</option>
+                                                }
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-3">Room - Bed</label>
+                                        <div class="col-lg-6">
+                                            <select id="IdBed" name="IdBed" class="form-control m-bot15">
+                                                @foreach (var bed in ViewBag.emptyBedsList)
+                                                {
+                                                    foreach (var room in listRoom)
+                                                    {
+                                                        if (room.Id == bed.IdRoom)
+                                                        {
+                                                            <option value="@bed.Id">@room.Name - @bed.Name </option>
+                                                        }
+                                                    }
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label class="control-label col-lg-3">Description</label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control " id="Message" name="Message">@(Model.Message == null? "":Model.Message)</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-3 col-lg-6">
+                                            <button class="btn btn-primary" type="submit">Save</button>
+                                            <button class="btn btn-default" type="button">Cancel</button>
+                                        </div>
+                                    </div>
+                                }
+
+
+
+
+
+
+
                             }
 
                         </div>

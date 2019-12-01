@@ -21,7 +21,7 @@
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     
-                    <tr><td colspan="10" align="center">@Html.ActionLink("Prev", "Schedule", new { date = scheduleDate.AddDays(-1) }, new { @style = "margin-right:20px" }) @scheduleDate.Date.ToShortDateString() @Html.ActionLink("Next", "Schedule", new { date = scheduleDate.AddDays(1) }, new { @style = "margin-left:20px" })</tr>
+                    <tr><td colspan="12" align="center">@Html.ActionLink("Prev", "Schedule", new { date = scheduleDate.AddDays(-1) }, new { @style = "margin-right:20px" }) @scheduleDate.Date.ToShortDateString() @Html.ActionLink("Next", "Schedule", new { date = scheduleDate.AddDays(1) }, new { @style = "margin-left:20px" })</tr>
                     <tr>
                         <td align="center">Room </td>
                         <td>Bed  </td>
@@ -33,264 +33,326 @@
                         <td>2:00-3:00 </td>
                         <td>3:00-4:00 </td>
                         <td>4:00-5:00 </td>
+                        <td>5:00-6:00 </td>
+                        <td>6:00-7:00 </td>
                     </tr>
                     @foreach (var bed in listBed)
                     {
-                        <tr style="height:100px">
-                            <td>
-                                @{
-                                    foreach (var room in listRoom)
+                    <tr style="height:100px">
+                        <td>
+                            @{
+                                foreach (var room in listRoom)
+                                {
+                                    if (bed.IdRoom == room.Id)
                                     {
-                                        if (bed.IdRoom == room.Id)
-                                        {
-                                            @: @room.Name
-                                        }
+                                        @: @room.Name
                                     }
                                 }
-                            </td>
-                            <td>@bed.Name</td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>@bed.Name</td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 8 && booking.ArrivalTime.TimeOfDay.Hours < 9)
                                         {
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 8 && booking.ArrivalTime.TimeOfDay.Hours < 9)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
-                                        }
-                                    }
-                                }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
-                                    {
-                                        if (booking.IdBed == bed.Id)
-                                        {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 9 && booking.ArrivalTime.TimeOfDay.Hours < 10)
+                                            foreach (var services in listServices)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (services.id == booking.IdServices)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
-                                                }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
+                                                    @: @services.name
                                                 }
                                             }
 
                                         }
                                     }
                                 }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 9 && booking.ArrivalTime.TimeOfDay.Hours < 10)
                                         {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 10 && booking.ArrivalTime.TimeOfDay.Hours < 11)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
+                                    {
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 10 && booking.ArrivalTime.TimeOfDay.Hours < 11)
+                                        {
+                                            foreach (var customer in listCustomer)
+                                            {
+                                                if (customer.id == booking.IdCustomer)
+                                                {
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
+                                                }
+                                            }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
                                         }
                                     }
                                 }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 11 && booking.ArrivalTime.TimeOfDay.Hours < 12)
                                         {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 11 && booking.ArrivalTime.TimeOfDay.Hours < 12)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
                                         }
                                     }
                                 }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 13 && booking.ArrivalTime.TimeOfDay.Hours < 14)
                                         {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 13 && booking.ArrivalTime.TimeOfDay.Hours < 14)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
-
-                                                }
-
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
 
                                             }
-                                        }
-                                    }
-                                }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
-                                    {
-                                        if (booking.IdBed == bed.Id)
-                                        {
 
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 14 && booking.ArrivalTime.TimeOfDay.Hours < 15)
+                                            foreach (var services in listServices)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (services.id == booking.IdServices)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @services.name
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
+
                                         }
                                     }
                                 }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 14 && booking.ArrivalTime.TimeOfDay.Hours < 15)
                                         {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 15 && booking.ArrivalTime.TimeOfDay.Hours < 16)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
                                         }
                                     }
                                 }
-                            </td>
-                            <td>
-                                @{
-                                    foreach (var booking in Model)
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
                                     {
-                                        if (booking.IdBed == bed.Id)
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 15 && booking.ArrivalTime.TimeOfDay.Hours < 16)
                                         {
-
-                                            if (booking.ArrivalTime.TimeOfDay.Hours >= 16 && booking.ArrivalTime.TimeOfDay.Hours < 17)
+                                            foreach (var customer in listCustomer)
                                             {
-                                                foreach (var customer in listCustomer)
+                                                if (customer.id == booking.IdCustomer)
                                                 {
-                                                    if (customer.id == booking.IdCustomer)
-                                                    {
-                                                        @: @customer.Name <br />
-                                                        @: @customer.phone <br />
-                                                    }
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
                                                 }
-                                                foreach (var services in listServices)
-                                                {
-                                                    if (services.id == booking.IdServices)
-                                                    {
-                                                        @: @services.name
-                                                    }
-                                                }
-
                                             }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
                                         }
                                     }
                                 }
-                            </td>
-                        </tr>
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
+                                    {
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 16 && booking.ArrivalTime.TimeOfDay.Hours < 17)
+                                        {
+                                            foreach (var customer in listCustomer)
+                                            {
+                                                if (customer.id == booking.IdCustomer)
+                                                {
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
+                                                }
+                                            }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
+                                    {
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 17 && booking.ArrivalTime.TimeOfDay.Hours < 18)
+                                        {
+                                            foreach (var customer in listCustomer)
+                                            {
+                                                if (customer.id == booking.IdCustomer)
+                                                {
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
+                                                }
+                                            }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @{
+                                foreach (var booking in Model)
+                                {
+                                    if (booking.IdBed == bed.Id)
+                                    {
+
+                                        if (booking.ArrivalTime.TimeOfDay.Hours >= 18 && booking.ArrivalTime.TimeOfDay.Hours < 19)
+                                        {
+                                            foreach (var customer in listCustomer)
+                                            {
+                                                if (customer.id == booking.IdCustomer)
+                                                {
+                                                    @: @customer.Name <br />
+                                                    @: @customer.phone <br />
+                                                }
+                                            }
+                                            foreach (var services in listServices)
+                                            {
+                                                if (services.id == booking.IdServices)
+                                                {
+                                                    @: @services.name
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
                     }
 
 

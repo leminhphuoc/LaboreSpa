@@ -15,6 +15,7 @@ namespace Models.IRepository
         long AddSlide(Slide slide);
         bool EditSlide(Slide slide);
         bool Delete(long id);
+        List<Slide> GetListTrue();
     }
 }
 

@@ -11,5 +11,6 @@ namespace FonSpa.Services.IClientServices
     {
         List<Product> ListAll();
         Product GetDetail(long id);
+        List<Product> ListByCategory(int idCategory);
     }
 }

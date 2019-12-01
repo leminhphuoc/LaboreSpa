@@ -41,12 +41,12 @@ namespace FonSpa.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Service serivces)
         {
-
+            ViewBag.SerivcesCategory = _serivcesAdminServices.GetServiceCategory();
             if (ModelState.IsValid)
             {
                 var addSerivces = _serivcesAdminServices.AddService(serivces);
                 var idSerivces = addSerivces;
-                if (idSerivces == 0) ModelState.AddModelError("", "Add About Fail !");
+                if (idSerivces == 0) ModelState.AddModelError("", "Add Services Fail !");
                 return RedirectToAction("Index");
             }
             return View(serivces);

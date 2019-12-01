@@ -21,8 +21,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Parent Menu</th>
+                            <th>Name</th>  
                             <th>#</th>
                         </tr>
                     </thead>
@@ -34,20 +33,7 @@
                                     <tr id="row_@item.id">
                                         <td>@item.id</td>
                                         <td>@item.name</td>
-                                        <td>
-                                            @{ 
-                                                if(listMenu != null)
-                                                {
-                                                    foreach(var menu in listMenu)
-                                                    {
-                                                        if(menu.id == item.ParentMenuID)
-                                                        {
-                                                            @: @menu.text
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        </td>
+                                       
                                         <td>
                                             <a href="/Admin/MenuTypeAdmin/Edit/@item.id">Edit</a>
                                             /

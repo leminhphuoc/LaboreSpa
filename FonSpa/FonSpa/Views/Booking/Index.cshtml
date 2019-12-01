@@ -1,11 +1,14 @@
-﻿
+﻿@model Models.Entity.Booking
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Models.Entity.Service> servicesList = ViewBag.servicesList;
+    List<Models.Entity.Bed> bedsList = ViewBag.bedsList;
+    List<Models.Entity.Room> roomsList = ViewBag.roomsList;
 }
 
 <!-- Title Page -->
-<div class="title-page" style="background-image: url(assets/images/title-page-01.png);">
+<div class="title-page" style="background-image: url(/Asset/Client/images/title-page-01.png);">
     <div class="container">
         <h1 class="main-title">
             Booking
@@ -36,96 +39,126 @@
             </div>
 
             <div class="col-lg-6">
-                <form class="book-service-form-02">
-                    <div class="heading-form">
-                        <h3 class="title-form">
-                            Book services
-                        </h3>
+                    @using (Html.BeginForm("CreateBooking", "Booking", FormMethod.Post, new { @class = "book-service-form-02"}))
+                    {
+                        <div class="heading-form">
+                            <h3 class="title-form">
+                                Book services
+                            </h3>
 
-                        <img class="line-heading" src="/Asset/Client/images/icons/wave-line-03.png" alt="IMG">
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label class="wrap-input">
-                                <input type="text" placeholder="Full name *">
-
-                                <i class="icon-user"></i>
-                            </label>
+                            <img class="line-heading" src="/Asset/Client/images/icons/wave-line-03.png" alt="IMG">
                         </div>
 
-                        <div class="col-sm-6">
-                            <label class="wrap-input">
-                                <input type="text" placeholder="Phone number *">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="wrap-input">
+                                    <input name="name" id="name" type="text" placeholder="Full name *">
 
-                                <i class="icon-call-out"></i>
-                            </label>
+                                    <i class="icon-user"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="wrap-input">
+                                    <input name="phone" id="phone" pattern="(09|01[2|6|8|9])+([0-9]{8})\b" type="text" placeholder="Phone number *">
+
+                                    <i class="icon-call-out"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="wrap-input js-call-datepicker" data-drop="down" data-drop-inside="true">
+                                    <input type="text" name="ArrivalTime" id="ArrivalTime" autocomplete="off">
+
+                                    <i class="icon-calendar"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="time" name="time">
+                                        <option value="8">8:00 AM</option>
+                                        <option value="9">9:00 AM</option>
+                                        <option value="10">10:00 AM</option>
+                                        <option value="11">11:00 AM</option>
+                                        <option value="13">1:00 PM</option>
+                                        <option value="14">2:00 PM</option>
+                                        <option value="15">3:00 PM</option>
+                                        <option value="16">4:00 PM</option>
+                                        <option value="17">5:00 PM</option>
+                                        <option value="18">6:00 PM</option>
+                                    </select>
+
+                                    <i class="icon-clock"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="IdServices" name="IdServices">
+                                        @if (ViewBag.services != null)
+                                        {
+                                            foreach (var services in servicesList)
+                                            {
+                                                if (services.id == ViewBag.services.id)
+                                                {
+                                                    <option value="@services.id" selected>@services.name</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@services.id">@services.name</option>
+                                                }
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <option value="0">Services *</option>
+                                            foreach (var services in servicesList)
+                                            {
+                                                <option value="@services.id">@services.name</option>
+                                            }
+                                        }
+
+                                    </select>
+
+                                    <i class="lnr lnr-chevron-down"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label class="wrap-input js-call-select2" data-style="layout-1">
+                                    <select id="IdBed" name="IdBed">
+                                        <option value="0">Select Spa Room-Bed *</option>
+                                        @foreach (var room in roomsList)
+                                        {
+                                            foreach (var bed in bedsList)
+                                            {
+                                                if (bed.IdRoom == room.Id)
+                                                {
+                                                    <option value="@bed.Id">@room.Name : @bed.Name</option>
+                                                }
+
+                                            }
+
+                                        }
+                                    </select>
+
+                                    <i class="lnr lnr-chevron-down"></i>
+                                </label>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="wrap-input">
+                                    <textarea id="Message" name="Message" placeholder="Message"></textarea>
+                                </label>
+
+                                <button type="submit" class="hun-button size-normal shape-round style-fill-color">
+                                    Make appointment
+                                </button>
+                            </div>
                         </div>
-
-                        <div class="col-sm-6">
-                            <label class="wrap-input js-call-datepicker" data-drop="down" data-drop-inside="true">
-                                <input type="text" name="date" autocomplete="off">
-
-                                <i class="icon-calendar"></i>
-                            </label>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label class="wrap-input js-call-select2" data-style="layout-1">
-                                <select>
-                                    <option>10:00 AM</option>
-                                    <option>11:00 AM</option>
-                                    <option>1:00 PM</option>
-                                    <option>2:00 PM</option>
-                                    <option>3:00 PM</option>
-                                    <option>4:00 PM</option>
-                                    <option>5:00 PM</option>
-                                    <option>6:00 PM</option>
-                                    <option>7:00 PM</option>
-                                    <option>8:00 PM</option>
-                                </select>
-
-                                <i class="icon-clock"></i>
-                            </label>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label class="wrap-input js-call-select2" data-style="layout-1">
-                                <select>
-                                    <option>Services *</option>
-                                    <option>Shoulder Massage</option>
-                                    <option>Hot Herbal Massage</option>
-                                    <option>Collagen Work</option>
-                                </select>
-
-                                <i class="lnr lnr-chevron-down"></i>
-                            </label>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label class="wrap-input js-call-select2" data-style="layout-1">
-                                <select>
-                                    <option>Select Employees</option>
-                                    <option>Lori Alvarez</option>
-                                    <option>Lisa Young</option>
-                                    <option>Julia Berry</option>
-                                </select>
-
-                                <i class="lnr lnr-chevron-down"></i>
-                            </label>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="wrap-input">
-                                <textarea placeholder="Massage *"></textarea>
-                            </label>
-
-                            <button class="hun-button size-normal shape-round style-fill-color">
-                                Make appointment
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                    }
 
                 <div class="hun-element-work-time layout-1 text-center">
                     <h5 class="title-element">
@@ -134,12 +167,9 @@
 
                     <div class="content-element">
                         <span>
-                            Weekdays: 10am - 7pm
+                             8am - 7pm
                         </span>
 
-                        <span>
-                            Saturday: 10am - 5pm
-                        </span>
                     </div>
                 </div>
             </div>

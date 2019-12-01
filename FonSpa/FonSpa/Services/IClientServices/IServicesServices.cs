@@ -11,5 +11,6 @@ namespace FonSpa.Services.IClientServices
     {
         List<Service> ListAll();
         Service GetDetail(long id);
+        List<Service> ListByCategory(int idCategory);
     }
 }

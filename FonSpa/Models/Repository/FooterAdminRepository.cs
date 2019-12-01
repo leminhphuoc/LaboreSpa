@@ -45,6 +45,7 @@ namespace Models.Repository
             footerEdit.link = footer.link;
             footerEdit.displayOrder = footer.displayOrder;
             footerEdit.typeId = footer.typeId;
+            footerEdit.Icon = footer.Icon;
             footerEdit.status = footer.status;
             _db.SaveChanges();
             return true;

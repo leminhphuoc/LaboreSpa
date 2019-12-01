@@ -17,7 +17,7 @@ namespace Models.Entity
         [StringLength(250)]
         public string metaTitle { get; set; }
 
-        [StringLength(250)]
+        [StringLength(1500)]
         public string description { get; set; }
 
         [StringLength(100)]

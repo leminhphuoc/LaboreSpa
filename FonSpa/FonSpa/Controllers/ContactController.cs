@@ -1,4 +1,5 @@
-﻿using FonSpa.Services.IServices;
+﻿using FonSpa.Services.ClientServices;
+using FonSpa.Services.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,12 @@ namespace FonSpa.Controllers
             var listContact = _contactClientServices.GetContacts();
             return View(listContact);
         }
+        public ActionResult SendMessage(string name, string email, string comment)
+        {
+            ViewBag.Tittle = "Contact";
+            SendMail.SendMailFromCustomer(name, email, comment);
+            return View("~/Views/Shared/Success");
+        }
+
     }
 }

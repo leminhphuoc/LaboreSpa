@@ -22,5 +22,7 @@ namespace Models.Entity
         public int? typeId { get; set; }
 
         public bool? status { get; set; }
+
+        public string Icon { get; set; }
     }
 }

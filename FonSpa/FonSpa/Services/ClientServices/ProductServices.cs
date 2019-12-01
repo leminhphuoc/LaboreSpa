@@ -18,7 +18,12 @@ namespace FonSpa.Services.ClientServices
 
         public List<Product> ListAll()
         {
-            return _productAdminRepository.GetListProduct();
+            return _productAdminRepository.GetListProduct().Where(x=>x.status == true).OrderBy(x=>x.createdDate).ToList();
+        }
+
+        public List<Product> ListByCategory(int idCategory)
+        {
+            return _productAdminRepository.GetListProduct().Where(x => x.status == true && x.idCategory == idCategory).OrderBy(x => x.createdDate).ToList();
         }
 
         public Product GetDetail(long id)

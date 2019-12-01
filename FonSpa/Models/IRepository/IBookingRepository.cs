@@ -9,7 +9,7 @@ namespace Models.IRepository
 {
     public interface IBookingRepository
     {
-        Booking GetDetail(int id);
+        Booking GetDetail(long id);
         List<Booking> GetList();
         List<Booking> ListBookingByDate(DateTime? date);
         long Add(Booking Booking);

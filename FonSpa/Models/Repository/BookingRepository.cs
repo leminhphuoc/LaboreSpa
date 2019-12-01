@@ -19,7 +19,7 @@ namespace Models.Repository
             _db = new FonSpaDbContext();
         }
 
-        public Booking GetDetail(int id)
+        public Booking GetDetail(long id)
         {
             var Booking = _db.Bookings.Find(id);
             return Booking;
@@ -117,6 +117,8 @@ namespace Models.Repository
             editBooking.ArrivalTime = Booking.ArrivalTime;
             editBooking.IdCustomer = Booking.IdCustomer;
             editBooking.IdServices = Booking.IdServices;
+            editBooking.IdBed = Booking.IdBed;
+            editBooking.Message = Booking.Message;
 
             _db.SaveChanges();
             return true;

@@ -32,7 +32,7 @@ namespace Models.Repository
 
         public long AddCustomer(Customer customer)
         {
-            customer.status = false;
+            customer.status = true;
             customer.createdDate = DateTime.Now;
             var addCustomer = _db.Customers.Add(customer);
             _db.SaveChanges();

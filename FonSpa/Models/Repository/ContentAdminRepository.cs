@@ -32,7 +32,7 @@ namespace Models.Repository
 
         public long AddContent(Content content)
         {
-            content.status = false;
+            
             content.createdDate = DateTime.Now;
             var addContent = _db.Contents.Add(content);
             _db.SaveChanges();
@@ -82,7 +82,7 @@ namespace Models.Repository
 
         public List<Content> ListSearchContent(string searchString)
         {
-            return _db.Contents.Where(x => x.name == searchString).ToList();
+            return _db.Contents.Where(x => x.name.ToUpper() == searchString.ToUpper()).ToList();
         }
 
     }

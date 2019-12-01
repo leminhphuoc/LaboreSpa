@@ -75,6 +75,8 @@ namespace FonSpa.Areas.Admin
             container.RegisterType<IHomeServices, HomeServices>();
             container.RegisterType<IProductServices, ProductServices>();
             container.RegisterType<IServicesServices, ServicesServices>();
+            container.RegisterType<IBookingServices, BookingServices>();
+            container.RegisterType<IBlogServices, BlogServices>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 

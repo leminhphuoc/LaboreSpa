@@ -43,7 +43,7 @@
                                             }
                                         </td>
                                         <td>@item.name</td>
-                                      
+
                                         <td>
                                             @{
                                                 if (item.idCategory != null)
@@ -77,6 +77,9 @@
                 </table>
             </div>
         </div>
+        <button class="btn btn-info" type="button" onclick="location.href='@Url.Action("Create", "ServicesAdmin")'">
+            Create New
+        </button>
     </div>
 </section>
 

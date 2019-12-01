@@ -13,7 +13,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                List Bed 
+                List Bed
             </div>
             <div class="row w3-res-tb">
             </div>
@@ -37,15 +37,15 @@
                                         <td>@item.Id</td>
                                         <td>@item.Name</td>
                                         <td>
-                                        @{
-                                            foreach(var room in listRoom)
-                                            {
-                                                if(room.Id == item.IdRoom)
+                                            @{
+                                                foreach (var room in listRoom)
                                                 {
-                                                    @: @room.Name
+                                                    if (room.Id == item.IdRoom)
+                                                    {
+                                                        @: @room.Name
+                                                    }
                                                 }
                                             }
-                                        }
                                         </td>
                                         <td><a href="#" class="btn-active" data-id="@item.Id">@(item.Status == true ? "Active" : "Empty")</a></td>
                                         <td>
@@ -66,6 +66,9 @@
                 </table>
             </div>
         </div>
+        <button class="btn btn-info" type="button" onclick="location.href='@Url.Action("Create", "BedAdmin")'">
+            Create New
+        </button>
     </div>
 </section>
 

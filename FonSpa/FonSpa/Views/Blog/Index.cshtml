@@ -1,7 +1,10 @@
-﻿
+﻿@model PagedList.IPagedList<Models.Entity.Content>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Models.Entity.ContentCategory> contentCategories = ViewBag.ListContentCategory;
+    List<Models.Entity.Content> recentBlog = ViewBag.RecentBlog;
+    List<Models.Entity.Content> blogList = ViewBag.BlogList;
 }
 
 <!-- Title Page -->
@@ -32,283 +35,135 @@
             <div class="col-lg-9">
                 <div class="main-content">
                     <div class="hun-element-blog layout-1">
-                        <div class="item-blog">
-                            <div class="pic-blog">
-                                <a href="blog-detail.html">
-                                    <img src="/Asset/Client/images/blog-01.jpg" alt="IMG">
-                                </a>
-                            </div>
-
-                            <div class="text-blog">
-                                <div class="cat-blog">
-                                    <a href="#" class="item-cat">
-                                        Beauty
-                                    </a>
-
-                                    <a href="#" class="item-cat">
-                                        Spa
+                        @foreach (var blog in Model)
+                        {
+                            <div class="item-blog">
+                                <div class="pic-blog">
+                                    <a href="/blogdetail?id=@blog.id">
+                                        <img src="@blog.image" alt="IMG">
                                     </a>
                                 </div>
 
-                                <h4 class="title-blog">
-                                    <a href="blog-detail.html">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                    </a>
-                                </h4>
-
-                                <div class="description-blog">
-                                    Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
-                                </div>
-                            </div>
-
-                            <div class="foot-item">
-                                <a href="blog-detail.html" class="link-blog">
-                                    Read more
-                                </a>
-
-                                <ul class="share-link">
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-facebook"></i>
+                                <div class="text-blog">
+                                    <div class="cat-blog">
+                                        <a href="#" class="item-cat">
+                                            @foreach (var category in contentCategories)
+                                            {
+                                                if (category.id == blog.categoryID)
+                                                {
+                                                    @: @category.name
+                                                }
+                                            }
                                         </a>
-                                    </li>
+                                    </div>
 
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-twitter"></i>
+                                    <h4 class="title-blog">
+                                        <a href="/blogdetail?id=@blog.id">
+                                            @blog.name
                                         </a>
-                                    </li>
+                                    </h4>
 
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-dribbble"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-tumblr"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="item-blog">
-                            <div class="pic-blog">
-                                <a href="blog-detail.html">
-                                    <img src="/Asset/Client/images/blog-02.jpg" alt="IMG">
-                                </a>
-                            </div>
-
-                            <div class="text-blog">
-                                <div class="cat-blog">
-                                    <a href="#" class="item-cat">
-                                        Beauty
-                                    </a>
-
-                                    <a href="#" class="item-cat">
-                                        Spa
-                                    </a>
+                                    <div class="description-blog">
+                                        @blog.description
+                                    </div>
                                 </div>
 
-                                <h4 class="title-blog">
-                                    <a href="blog-detail.html">
-                                        Quis autem vel eum iure reprehenderit
+                                <div class="foot-item">
+                                    <a href="/blogdetail?id=@blog.id" class="link-blog">
+                                        Read more
                                     </a>
-                                </h4>
 
-                                <div class="description-blog">
-                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
+                                    <ul class="share-link">
+                                        <li>
+                                            <a href="#" class="item-share">
+                                                <i class="icon-social-facebook"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="item-share">
+                                                <i class="icon-social-twitter"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="item-share">
+                                                <i class="icon-social-dribbble"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="item-share">
+                                                <i class="icon-social-tumblr"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                        }
 
-                            <div class="foot-item">
-                                <a href="blog-detail.html" class="link-blog">
-                                    Read more
-                                </a>
 
-                                <ul class="share-link">
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-facebook"></i>
-                                        </a>
-                                    </li>
 
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-twitter"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-dribbble"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-tumblr"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="item-blog">
-                            <div class="pic-blog">
-                                <a href="blog-detail.html">
-                                    <img src="/Asset/Client/images/blog-03.jpg" alt="IMG">
-                                </a>
-                            </div>
-
-                            <div class="text-blog">
-                                <div class="cat-blog">
-                                    <a href="#" class="item-cat">
-                                        Beauty
-                                    </a>
-
-                                    <a href="#" class="item-cat">
-                                        Spa
-                                    </a>
-                                </div>
-
-                                <h4 class="title-blog">
-                                    <a href="blog-detail.html">
-                                        Sed ut perspiciatis unde omnis iste natus
-                                    </a>
-                                </h4>
-
-                                <div class="description-blog">
-                                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                                </div>
-                            </div>
-
-                            <div class="foot-item">
-                                <a href="blog-detail.html" class="link-blog">
-                                    Read more
-                                </a>
-
-                                <ul class="share-link">
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-facebook"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-twitter"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-dribbble"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-tumblr"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="item-blog">
-                            <div class="pic-blog">
-                                <a href="blog-detail.html">
-                                    <img src="/Asset/Client/images/blog-04.jpg" alt="IMG">
-                                </a>
-                            </div>
-
-                            <div class="text-blog">
-                                <div class="cat-blog">
-                                    <a href="#" class="item-cat">
-                                        Beauty
-                                    </a>
-
-                                    <a href="#" class="item-cat">
-                                        Spa
-                                    </a>
-                                </div>
-
-                                <h4 class="title-blog">
-                                    <a href="blog-detail.html">
-                                        Nor again is there anyone who loves
-                                    </a>
-                                </h4>
-
-                                <div class="description-blog">
-                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                </div>
-                            </div>
-
-                            <div class="foot-item">
-                                <a href="blog-detail.html" class="link-blog">
-                                    Read more
-                                </a>
-
-                                <ul class="share-link">
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-facebook"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-twitter"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-dribbble"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="item-share">
-                                            <i class="icon-social-tumblr"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="loop-pagination text-center">
                         <ul>
-                            <li class="d-none">
-                                <a href="#" class="page-numbers prev">
-                                    <i class="zmdi zmdi-chevron-left"></i>
-                                </a>
-                            </li>
+                            @{
+                                if (Model.PageNumber == 1)
+                                {
+                                    <li class="d-none">
+                                        <a href="#" class="page-numbers prev">
+                                            <i class="zmdi zmdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+
+                                    var prevalue = Model.PageNumber;
+                                    if (Model.PageNumber > 1)
+                                    {
+                                        prevalue = Model.PageNumber - 1;
+                                    }
+
+                                    <li>
+                                        <a href="/Blog/Index?page=@prevalue" class="page-numbers prev">
+                                            <i class="zmdi zmdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                }
+                            }
+
+
+                            @for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                if (Model.PageNumber == i)
+                                {
+                                    <li>
+                                        <a href="/Blog/Index?page=@i" class="page-numbers current">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="/Blog/Index?page=@i" class="page-numbers">
+                                            @i
+                                        </a>
+                                    </li>
+                                }
+                            }
 
                             <li>
-                                <a href="#" class="page-numbers current">
-                                    1
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="page-numbers">
-                                    2
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="page-numbers">
-                                    3
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="page-numbers next">
+                                @{
+                                    var nextvalue = Model.PageNumber;
+                                    if (Model.PageNumber < Model.PageCount)
+                                    {
+                                        nextvalue = Model.PageNumber + 1;
+                                    }
+                                }
+                                <a href="/Blog/Index?page=@nextvalue" class="page-numbers next">
                                     <i class="zmdi zmdi-chevron-right"></i>
                                 </a>
                             </li>
@@ -357,55 +212,29 @@
                         </h3>
 
                         <ul>
-                            <li>
-                                <a href="#">
-                                    Skin Care
-                                </a>
+                            @foreach (var category in contentCategories)
+                            {
+                                <li>
+                                    <a href="/Blog/ListByCategory?idCategory=@category.id">
+                                       @category.name
+                                    </a>
+                                    @{ 
+                                        int count = 0;
+                                        foreach(var blog in blogList)
+                                        {
+                                            if(blog.categoryID == category.id)
+                                            {
+                                                count++;
+                                            }
+                                        }
+                                    }
+                                    
+                                    <span class="count">
+                                        (@count)
+                                    </span>
+                                </li>
+                            }
 
-                                <span class="count">
-                                    (15)
-                                </span>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    Beauty
-                                </a>
-
-                                <span class="count">
-                                    (09)
-                                </span>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    Spa
-                                </a>
-
-                                <span class="count">
-                                    (28)
-                                </span>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    Massage
-                                </a>
-
-                                <span class="count">
-                                    (13)
-                                </span>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    Bath & Body
-                                </a>
-
-                                <span class="count">
-                                    (30)
-                                </span>
-                            </li>
                         </ul>
                     </div>
 
@@ -415,59 +244,29 @@
                         </h3>
 
                         <div class="list-post">
-                            <div class="item-post">
-                                <a href="#" class="pic-post">
-                                    <img src="/Asset/Client/images/post-widget-01.jpg" alt="IMG">
-                                </a>
+                            @foreach (var item in recentBlog)
+                            {
+                                <div class="item-post">
+                                    <a href="#" class="pic-post">
+                                        <img src="@item.image" alt="IMG">
+                                    </a>
 
-                                <div class="text-post">
-                                    <div class="date-post">
-                                        august 25
+                                    <div class="text-post">
+                                        <div class="date-post">
+                                            @item.createdDate.Value.ToString("MMMM d")
+                                        </div>
+
+                                        <h4 class="title-post">
+                                            <a href="/blogdetail?id=@item.id">
+                                                @item.name
+                                            </a>
+                                        </h4>
                                     </div>
-
-                                    <h4 class="title-post">
-                                        <a href="#">
-                                            Guide to Beauty
-                                        </a>
-                                    </h4>
                                 </div>
-                            </div>
+                            }
 
-                            <div class="item-post">
-                                <a href="#" class="pic-post">
-                                    <img src="/Asset/Client/images/post-widget-02.jpg" alt="IMG">
-                                </a>
 
-                                <div class="text-post">
-                                    <div class="date-post">
-                                        august 25
-                                    </div>
-
-                                    <h4 class="title-post">
-                                        <a href="#">
-                                            Exfoliate Your
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="item-post">
-                                <a href="#" class="pic-post">
-                                    <img src="/Asset/Client/images/post-widget-03.jpg" alt="IMG">
-                                </a>
-
-                                <div class="text-post">
-                                    <div class="date-post">
-                                        august 25
-                                    </div>
-
-                                    <h4 class="title-post">
-                                        <a href="#">
-                                            Achieve Maxi
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
 

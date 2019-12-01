@@ -47,25 +47,27 @@
                 </div>
 
                 <div class="col-md-8">
-                    <form class="contact-form-01">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input class="input-field" type="text" placeholder="Name *">
-                            </div>
-
-                            <div class="col-sm-6">
-                                <input class="input-field" type="text" placeholder="E-mail *">
-                            </div>
-
-                            <div class="col-12">
-                                <textarea class="input-field" placeholder="Your Comments *"></textarea>
-
-                                <button class="hun-button size-normal shape-round style-fill-color">
-                                    Send message
-                                </button>
-                            </div>
+                    @using (Html.BeginForm("SendMessage", "Contact", FormMethod.Post, new { @class = "contact-form-01" }))
+                    { 
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input name="name" id="name" class="input-field" type="text" placeholder="Name *">
                         </div>
-                    </form>
+
+                        <div class="col-sm-6">
+                            <input name="email" id="email" class="input-field" type="email" placeholder="E-mail *">
+                        </div>
+
+                        <div class="col-12">
+                            <textarea name="comment" id="comment" class="input-field" placeholder="Your Comments *"></textarea>
+
+                            <button class="hun-button size-normal shape-round style-fill-color">
+                                Send message
+                            </button>
+                        </div>
+                    </div>
+              
+                }
                 </div>
             </div>
         </div>

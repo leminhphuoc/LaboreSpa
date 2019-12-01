@@ -37,8 +37,13 @@ namespace FonSpa
              name: "services detail",
              url: "servicesdetail",
              defaults: new { controller = "Services", action = "Detail", id = UrlParameter.Optional }
-         );
+         ); 
 
+                routes.MapRoute(
+             name: "blog detail",
+             url: "blogdetail",
+             defaults: new { controller = "Blog", action = "Detail", id = UrlParameter.Optional }
+         );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
