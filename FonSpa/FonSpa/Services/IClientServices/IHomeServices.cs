@@ -20,5 +20,6 @@ namespace FonSpa.Services.IClientServices
         List<Service> ListServices();
         List<Footer> ListFooter();
         List<FooterCategory> ListFooterCategory();
+        List<About> ListAbout();
     }
 }

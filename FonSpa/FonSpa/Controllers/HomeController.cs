@@ -29,6 +29,7 @@ namespace FonSpa.Controllers
             ViewBag.servicesList = _homeServices.ListServices();
             ViewBag.FooterCategories = _homeServices.ListFooterCategory();
             ViewBag.Footers = _homeServices.ListFooter();
+            ViewBag.About = _homeServices.ListAbout();
             //ViewBag.ListMenu = _homeServices.ListMenu();
             return View();
         }

@@ -15,10 +15,10 @@ namespace Models.Entity
         [StringLength(250)]
         public string name { get; set; }
 
-        [StringLength(250)]
+        [StringLength(500)]
         public string metaTitle { get; set; }
 
-        [StringLength(250)]
+        [StringLength(5000)]
         public string description { get; set; }
 
         [Column(TypeName = "ntext")]

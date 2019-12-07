@@ -21,8 +21,9 @@ namespace FonSpa.Services.ClientServices
         private readonly IServiceAdminRepository _serviceAdminRepository;
         private readonly IFooterCategoryAdminRepository _footerCategoryAdminRepository;
         private readonly IFooterAdminRepository _footerAdminRepository;
+        private readonly IAboutAdminRepository _aboutAdminRepository;
         public HomeServices(IMenuAdminRepository menuAdminRepository, ISlideAdminRepository slideAdminRepository, IProductCategoryAdminRepository productCategoryAdminRepository, IServiceCategoryAdminRepository serviceCategoryAdminRepository, IContentCategoryAdminRepository contentCategoryAdminRepository, IBookingRepository bookingRepository, IRoomRepository roomRepository,
-            IBedRepository bedRepository, IServiceAdminRepository serviceAdminRepository, IFooterAdminRepository footerAdminRepository, IFooterCategoryAdminRepository footerCategoryAdminRepository)
+            IBedRepository bedRepository, IServiceAdminRepository serviceAdminRepository, IFooterAdminRepository footerAdminRepository, IFooterCategoryAdminRepository footerCategoryAdminRepository, IAboutAdminRepository aboutAdminRepository)
         {
             _menuAdminRepository = menuAdminRepository;
             _slideAdminRepository = slideAdminRepository;
@@ -35,6 +36,7 @@ namespace FonSpa.Services.ClientServices
             _serviceAdminRepository = serviceAdminRepository;
             _footerCategoryAdminRepository = footerCategoryAdminRepository;
             _footerAdminRepository = footerAdminRepository;
+            _aboutAdminRepository = aboutAdminRepository;
         }
 
         public List<Menu> ListMenu()
@@ -60,6 +62,11 @@ namespace FonSpa.Services.ClientServices
         public List<Bed> ListBed()
         {
             return _bedRepository.GetList();
+        }
+
+        public List<About> ListAbout()
+        {
+            return _aboutAdminRepository.GetListAbout();
         }
 
         public List<Service> ListServices()
