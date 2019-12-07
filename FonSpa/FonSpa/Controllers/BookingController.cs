@@ -32,9 +32,9 @@ namespace FonSpa.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateBooking(Booking booking, string name, string phone , int time)
+        public ActionResult Index(Booking booking, string name, string phone , int time)
         {
-            if(ModelState.IsValid)
+            if(ModelState.IsValid && booking.IdBed != 0 && booking.IdServices != 0)
             {
                 var customer = new Customer() { Name = name, phone = phone };
                 var idCustomer = _bookingServices.AddCustomer(customer);
@@ -47,6 +47,7 @@ namespace FonSpa.Controllers
             ViewBag.servicesList = _bookingServices.ServicesList();
             ViewBag.bedsList = _bookingServices.BedsList();
             ViewBag.roomsList = _bookingServices.RoomsList();
+            ModelState.AddModelError("", "Please fill full information for booking !");
             if (booking.IdServices != 0)
             {
                 var services = _bookingServices.GetServices(booking.IdServices);

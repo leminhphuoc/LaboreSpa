@@ -11,6 +11,7 @@
     {
         public long Id { get; set; }
 
+        [Required]
         public DateTime ArrivalTime { get; set; }
 
         [Required]
