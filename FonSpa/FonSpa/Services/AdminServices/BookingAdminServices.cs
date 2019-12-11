@@ -11,9 +11,11 @@ namespace FonSpa.Services.Services
     public class BookingAdminServices : IBookingAdminServices
     {
         private readonly IBookingRepository _bookingRepository;
-        public BookingAdminServices(IBookingRepository bookingRepository)
+        private readonly IBedRepository _bedRepository;
+        public BookingAdminServices(IBookingRepository bookingRepository, IBedRepository bedRepository)
         {
             _bookingRepository = bookingRepository;
+            _bedRepository = bedRepository;
         }
 
         public List<Booking> ListAll()
@@ -76,6 +78,13 @@ namespace FonSpa.Services.Services
         public List<Bed> GedBedsByTime(DateTime? date)
         {
             return _bookingRepository.GetBedByTime(date);
+        }
+
+        public Bed GetBed(int? id)
+        {
+            if (id == null) return null;
+            int idNotNull = id ?? default(int);
+            return _bedRepository.GetDetail(idNotNull) ;   
         }
 
     }

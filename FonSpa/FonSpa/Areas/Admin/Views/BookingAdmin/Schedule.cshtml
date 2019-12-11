@@ -53,12 +53,14 @@
                         <td>@bed.Name</td>
                         <td>
                             @{
+                                bool time8 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
                                     {
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 8 && booking.ArrivalTime.TimeOfDay.Hours < 9)
                                         {
+                                            time8 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -78,10 +80,15 @@
                                         }
                                     }
                                 }
+                                if (time8 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=8&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time9 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -89,10 +96,12 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 9 && booking.ArrivalTime.TimeOfDay.Hours < 10)
                                         {
+                                            time9 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
                                                 {
+
                                                     @: @customer.Name <br />
                                                     @: @customer.phone <br />
                                                 }
@@ -106,12 +115,19 @@
                                             }
                                         }
 
+
                                     }
+
+                                }
+                                if (time9 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=9&idBed=@bed.Id">Booking</a>
                                 }
                             }
                         </td>
                         <td>
                             @{
+                                bool time10 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -119,10 +135,12 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 10 && booking.ArrivalTime.TimeOfDay.Hours < 11)
                                         {
+                                            time10 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
                                                 {
+
                                                     @: @customer.Name <br />
                                                     @: @customer.phone <br />
                                                 }
@@ -138,10 +156,15 @@
                                         }
                                     }
                                 }
+                                if (time10 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=10&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time11 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -149,6 +172,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 11 && booking.ArrivalTime.TimeOfDay.Hours < 12)
                                         {
+                                            time11 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -168,10 +192,15 @@
                                         }
                                     }
                                 }
+                                if (time11 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=11&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time13 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -179,6 +208,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 13 && booking.ArrivalTime.TimeOfDay.Hours < 14)
                                         {
+                                            time13 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -200,10 +230,15 @@
                                         }
                                     }
                                 }
+                                if (time13 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=13&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time14 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -211,6 +246,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 14 && booking.ArrivalTime.TimeOfDay.Hours < 15)
                                         {
+                                            time14 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -230,10 +266,15 @@
                                         }
                                     }
                                 }
+                                if (time14 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=8&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time15 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -241,6 +282,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 15 && booking.ArrivalTime.TimeOfDay.Hours < 16)
                                         {
+                                            time15 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -260,10 +302,15 @@
                                         }
                                     }
                                 }
+                                if (time15 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=15&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time16 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -271,6 +318,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 16 && booking.ArrivalTime.TimeOfDay.Hours < 17)
                                         {
+                                            time16 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -290,10 +338,15 @@
                                         }
                                     }
                                 }
+                                if (time16 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=16&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time17 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -301,6 +354,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 17 && booking.ArrivalTime.TimeOfDay.Hours < 18)
                                         {
+                                            time17 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -320,10 +374,15 @@
                                         }
                                     }
                                 }
+                                if (time17 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=17&idBed=@bed.Id">Booking</a>
+                                }
                             }
                         </td>
                         <td>
                             @{
+                                bool time18 = false;
                                 foreach (var booking in Model)
                                 {
                                     if (booking.IdBed == bed.Id)
@@ -331,6 +390,7 @@
 
                                         if (booking.ArrivalTime.TimeOfDay.Hours >= 18 && booking.ArrivalTime.TimeOfDay.Hours < 19)
                                         {
+                                            time18 = true;
                                             foreach (var customer in listCustomer)
                                             {
                                                 if (customer.id == booking.IdCustomer)
@@ -349,6 +409,10 @@
 
                                         }
                                     }
+                                }
+                                if (time18 == false)
+                                {
+                                    <a href="/Admin/BookingAdmin/Create?date=@scheduleDate.ToString("MM/dd/yyyy")&time=18&idBed=@bed.Id">Booking</a>
                                 }
                             }
                         </td>

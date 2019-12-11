@@ -48,13 +48,15 @@ namespace FonSpa.Areas.Admin.Controllers
             else ViewBag.date = DateTime.Now;
             return View(listBookingbyday);
         }
-        public ActionResult Create(DateTime? date = null, int? time = null)
+        public ActionResult Create(DateTime? date = null, int? time = null, int? idBed = null)
         {
             ViewBag.listServices = _bookingAdminServices.ListService();
             ViewBag.listCustomer = _bookingAdminServices.ListCustomer();
             ViewBag.listRoom = _bookingAdminServices.ListRoom();
-            ViewBag.listBed = _bookingAdminServices.ListBed(); 
-            if(date != null)
+            ViewBag.listBed = _bookingAdminServices.ListBed();
+            ViewBag.bed = _bookingAdminServices.GetBed(idBed);
+            
+            if (date != null)
             {
                 var bookingDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, time.Value, 0, 0);
                 var bedsList = _bookingAdminServices.GedBedsByTime(bookingDate);

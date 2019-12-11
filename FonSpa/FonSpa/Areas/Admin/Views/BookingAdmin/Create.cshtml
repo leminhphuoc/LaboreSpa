@@ -6,7 +6,7 @@
     List<Models.Entity.Service> listServices = ViewBag.listServices;
     List<Models.Entity.Room> listRoom = ViewBag.listRoom;
     List<Models.Entity.Bed> listBed = ViewBag.listBed;
-
+    Models.Entity.Bed bed = ViewBag.bed;
 }
 
 
@@ -111,7 +111,7 @@
                                         <label class="control-label col-lg-3">Room - Bed</label>
                                         <div class="col-lg-6">
                                             <select id="IdBed" name="IdBed" class="form-control m-bot15">
-                                                @foreach (var bed in Model)
+                                                @if (bed != null)
                                                 {
                                                     foreach (var room in listRoom)
                                                     {
@@ -120,8 +120,22 @@
                                                             <option value="@bed.Id">@room.Name - @bed.Name </option>
                                                         }
                                                     }
-
                                                 }
+                                                else
+                                                {
+                                                    foreach (var itemBed in Model)
+                                                    {
+                                                        foreach (var room in listRoom)
+                                                        {
+                                                            if (room.Id == itemBed.IdRoom)
+                                                            {
+                                                                <option value="@itemBed.Id">@room.Name - @itemBed.Name </option>
+                                                            }
+                                                        }
+
+                                                    }
+                                                }
+
                                             </select>
                                         </div>
                                     </div>

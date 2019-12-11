@@ -20,5 +20,6 @@ namespace FonSpa.Services.IServices
         List<Room> ListRoom();
         List<Bed> ListBed();
         List<Bed> GedBedsByTime(DateTime? date);
+        Bed GetBed(int? id);
     }
 }
