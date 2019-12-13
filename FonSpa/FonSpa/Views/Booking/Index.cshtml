@@ -72,6 +72,7 @@
 
                                 <i class="icon-calendar"></i>
                             </label>
+                            @Html.ValidationMessageFor(m => m.ArrivalTime, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-sm-6">
@@ -88,7 +89,6 @@
                                     <option value="17">5:00 PM</option>
                                     <option value="18">6:00 PM</option>
                                 </select>
-                                @Html.ValidationMessageFor(m => m.ArrivalTime, "", new { @class = "text-danger" })
                                 <i class="icon-clock"></i>
                             </label>
                         </div>

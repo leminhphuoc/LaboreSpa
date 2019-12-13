@@ -561,7 +561,7 @@
                 showDropdowns: true,
                 drops: dataDrop,
                 locale: {
-                    format: 'DD/MM/YYYY'
+                    format: 'MM/DD/YYYY'
                 },
             });
         })

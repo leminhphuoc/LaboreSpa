@@ -12,6 +12,7 @@ namespace FonSpa.Controllers
     [CountVisitor]
     public class HomeController : Controller
     {
+     
 
         private readonly IHomeServices _homeServices;
         //private readonly IContentServices _contentServices;

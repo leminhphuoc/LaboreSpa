@@ -49,6 +49,12 @@ namespace FonSpa.Services.ClientServices
 
         public long AddCustomer(Customer customer)
         {
+            var customersList = _customerAdminRepository.GetListCustomer();
+            if(customersList.Where(x=>x.phone == customer.phone).Count() > 0)
+            {
+                var customerExits = customersList.Where(x => x.phone == customer.phone).FirstOrDefault();
+                return customerExits.id;
+            }
             return _customerAdminRepository.AddCustomer(customer);
         }
 
