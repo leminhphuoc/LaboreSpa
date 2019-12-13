@@ -7,6 +7,16 @@
     List<Models.Entity.Room> listRoom = ViewBag.listRoom;
     List<Models.Entity.Bed> listBed = ViewBag.listBed;
     Models.Entity.Bed bed = ViewBag.bed;
+    string customerName = null;
+    string customerPhone = null;
+    if (ViewBag.CustomerName != null )
+    {
+        customerName = ViewBag.CustomerName;
+    }
+    if (ViewBag.CustomerPhone != null)
+    {
+        customerPhone = ViewBag.CustomerPhone;
+    }
 }
 
 
@@ -95,15 +105,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-3">Customer</label>
+                                    <div class="form-group ">
+                                        <label for="confirm_password" class="control-label col-lg-3">Customer Name</label>
                                         <div class="col-lg-6">
-                                            <select id="IdCustomer" name="IdCustomer" class="form-control m-bot15">
-                                                @foreach (var customer in listCustomer)
-                                                {
-                                                    <option value="@customer.id">@customer.Name - @customer.phone</option>
-                                                }
-                                            </select>
+                                            <input value="@(customerName == null? "": customerName)" required class="form-control " id="customerName" name="customerName" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label for="confirm_password" class="control-label col-lg-3">Customer Phone</label>
+                                        <div class="col-lg-6">
+                                            <input value="@(customerPhone == null? "": customerPhone)" pattern="(09|08|03|04|05|07|01)+([0-9]{8})\b" required class="form-control " id="customerPhone" name="customerPhone" type="text">
                                         </div>
                                     </div>
 

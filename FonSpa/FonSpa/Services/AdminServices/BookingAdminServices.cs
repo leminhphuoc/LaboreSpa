@@ -12,10 +12,12 @@ namespace FonSpa.Services.Services
     {
         private readonly IBookingRepository _bookingRepository;
         private readonly IBedRepository _bedRepository;
-        public BookingAdminServices(IBookingRepository bookingRepository, IBedRepository bedRepository)
+        private readonly ICustomerAdminRepository _customerAdminRepository;
+        public BookingAdminServices(IBookingRepository bookingRepository, IBedRepository bedRepository, ICustomerAdminRepository customerAdminRepository)
         {
             _bookingRepository = bookingRepository;
             _bedRepository = bedRepository;
+            _customerAdminRepository = customerAdminRepository;
         }
 
         public List<Booking> ListAll()
@@ -31,8 +33,7 @@ namespace FonSpa.Services.Services
         public long AddBooking(Booking booking)
         {
             if (booking == null) return 0;
-            var addBooking = _bookingRepository.Add(booking);
-            var idBooking = addBooking;
+            var idBooking = _bookingRepository.Add(booking);
             return idBooking;
         }
 
@@ -86,6 +87,26 @@ namespace FonSpa.Services.Services
             int idNotNull = id ?? default(int);
             return _bedRepository.GetDetail(idNotNull) ;   
         }
+        
+        public long AddCustomer(string name, string phone)
+        {
+            var customersList = _customerAdminRepository.GetListCustomer();
+            if (customersList.Where(x => x.phone == phone).Count() > 0)
+            {
+                var customerExits = customersList.Where(x => x.phone == phone).FirstOrDefault();
+                return customerExits.id;
+            }
+            var customer = new Customer() { Name = name, phone = phone };
+            var idCustomer = _customerAdminRepository.AddCustomer(customer);
+            return idCustomer;
+        }
+        public bool EditCustomer(long id, string name, string phone)
+        {
+            var customer = new Customer() { id = id ,Name = name, phone = phone };
+            var ediCustomerSuccess = _customerAdminRepository.EditCustomer(customer);
+            return ediCustomerSuccess;
+        }
+
 
     }
 }

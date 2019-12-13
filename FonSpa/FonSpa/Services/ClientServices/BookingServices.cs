@@ -54,12 +54,21 @@ namespace FonSpa.Services.ClientServices
             {
                 var customerExits = customersList.Where(x => x.phone == customer.phone).FirstOrDefault();
                 return customerExits.id;
-            }
+            }   
             return _customerAdminRepository.AddCustomer(customer);
         }
 
         public long AddBooking(Booking booking)
         {
+            var booklingList = _bookingRepository.ListBookingByDate(booking.ArrivalTime);
+            if(booklingList.Where(x=>x.ArrivalTime == booking.ArrivalTime).Count() > 0)
+            {
+                var bookingInTime = booklingList.Where(x => x.ArrivalTime == booking.ArrivalTime).ToList();
+                foreach (var book in bookingInTime)
+                {
+                    if (booking.IdBed == book.IdBed) return 0;
+                }
+            }
             return _bookingRepository.Add(booking);
         }
     }

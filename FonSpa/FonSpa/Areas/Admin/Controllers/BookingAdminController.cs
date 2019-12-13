@@ -71,15 +71,19 @@ namespace FonSpa.Areas.Admin.Controllers
         [HttpPost]
         [AcceptVerbs(HttpVerbs.Post)]
         [ValidateInput(false)]
-        public ActionResult Create(Booking booking)
+        public ActionResult Create(Booking booking, string customerName, string customerPhone)
         {
 
             if (ModelState.IsValid)
             {
+                var idCustomer = _bookingAdminServices.AddCustomer(customerName, customerPhone);
+                booking.IdCustomer = idCustomer;
                 var addBookingSuccess = _bookingAdminServices.AddBooking(booking);
-                if (addBookingSuccess == 0) ModelState.AddModelError("", "Thêm sản phẩm không thành công !");
-                return RedirectToAction("Index");
+                if (addBookingSuccess == 0) ModelState.AddModelError("", "Add Booking Fail !");
+                return RedirectToAction("Schedule");
             }
+            ViewBag.CustomerName = customerName;
+            ViewBag.CustomerPhone = customerPhone;
             return View(booking);
         }
         public ActionResult Edit(int id , DateTime? date = null, int? time = null)
@@ -90,7 +94,7 @@ namespace FonSpa.Areas.Admin.Controllers
             ViewBag.listRoom = _bookingAdminServices.ListRoom();
             ViewBag.listBed = _bookingAdminServices.ListBed();
             ViewBag.emptyBedsList = null;
-            if (date != null)
+            if (date != null && time > DateTime.Now.Hour && date >= DateTime.Now.Date)
             {
                 var bookingDate = new DateTime(date.Value.Year, date.Value.Month, date.Value.Day, time.Value, 0, 0);
                 var emptyBedsList = _bookingAdminServices.GedBedsByTime(bookingDate);
@@ -99,19 +103,22 @@ namespace FonSpa.Areas.Admin.Controllers
                 ViewBag.emptyBedsList = emptyBedsList;
             }
             if (booking == null) return RedirectToAction("Index");
+            if(time < DateTime.Now.Hour || date < DateTime.Now.Date)
+                ModelState.AddModelError("", "The Arrival Time you choose must be after the current time  !");
             return View(booking);
         }
 
         [HttpPost]
         [AcceptVerbs(HttpVerbs.Post)]
         [ValidateInput(false)]
-        public ActionResult Edit(Booking booking)
+        public ActionResult Edit(Booking booking, string customerName, string customerPhone)
         {
             if (ModelState.IsValid)
             {
+                var editCustomerSuccess = _bookingAdminServices.EditCustomer(booking.IdCustomer, customerName, customerPhone);
                 var editBookingSuccess = _bookingAdminServices.Edit(booking);
-                if (!editBookingSuccess) ModelState.AddModelError("", "Sửa sản phẩm không thành công !");
-                return RedirectToAction("Index");
+                if (!editBookingSuccess) ModelState.AddModelError("", "Edit Booking Fail !");
+                return RedirectToAction("Schedule");
             }
             return View(booking);
         }
@@ -121,6 +128,12 @@ namespace FonSpa.Areas.Admin.Controllers
         {
             var deleteSuccess = _bookingAdminServices.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteInSchedule(int id)
+        {
+            var deleteSuccess = _bookingAdminServices.Delete(id);
+            return RedirectToAction("Schedule");
         }
 
     }

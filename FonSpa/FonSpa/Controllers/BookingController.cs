@@ -34,20 +34,40 @@ namespace FonSpa.Controllers
         [HttpPost]
         public ActionResult Index(Booking booking, string name, string phone , int time)
         {
-            if(ModelState.IsValid && booking.IdBed != 0 && booking.IdServices != 0)
+            long idBooking = 0;
+            if(ModelState.IsValid && booking.IdBed != 0 && booking.IdServices != 0 && time > DateTime.Now.Hour && booking.ArrivalTime.Date >= DateTime.Now.Date)
             {
+
                 var customer = new Customer() { Name = name, phone = phone };
                 var idCustomer = _bookingServices.AddCustomer(customer);
                 booking.IdCustomer = idCustomer;
                 var bookingDate = new DateTime(booking.ArrivalTime.Year, booking.ArrivalTime.Month, booking.ArrivalTime.Day, time, 0, 0);
                 booking.ArrivalTime = bookingDate;
-                var idBooking = _bookingServices.AddBooking(booking);
-                return RedirectToAction("Success",new {idBooking });
+                idBooking = _bookingServices.AddBooking(booking);
+                if(idBooking > 0)
+                {
+                    return RedirectToAction("Success", new { idBooking });
+                }
+               
+            }
+            if (booking.ArrivalTime < DateTime.Now || time < DateTime.Now.Hour)
+            {
+                ModelState.AddModelError("", "The Arrival Time you choose must be after the current time  !");
+            }
+            else if (idBooking == 0)
+            {
+                ModelState.AddModelError("", "The bed in arrival Time you choose isn't empty ! Please select other bed or time. ");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Please fill full information for booking !");
             }
             ViewBag.servicesList = _bookingServices.ServicesList();
             ViewBag.bedsList = _bookingServices.BedsList();
             ViewBag.roomsList = _bookingServices.RoomsList();
-            ModelState.AddModelError("", "Please fill full information for booking !");
+            ViewBag.name = name;
+            ViewBag.phone = phone;
+            
             if (booking.IdServices != 0)
             {
                 var services = _bookingServices.GetServices(booking.IdServices);

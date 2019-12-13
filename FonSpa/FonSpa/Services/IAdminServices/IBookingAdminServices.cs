@@ -21,5 +21,7 @@ namespace FonSpa.Services.IServices
         List<Bed> ListBed();
         List<Bed> GedBedsByTime(DateTime? date);
         Bed GetBed(int? id);
+        long AddCustomer(string name, string phone);
+        bool EditCustomer(long id, string name, string phone);
     }
 }

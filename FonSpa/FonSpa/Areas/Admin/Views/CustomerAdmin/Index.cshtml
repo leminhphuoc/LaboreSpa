@@ -21,10 +21,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Phone</th>
-                            <th>Address</th>
-                            <th>Status</th>
                             <th>#</th>
                         </tr>
                     </thead>
@@ -36,10 +33,7 @@
                                     <tr id="row_@item.id">
                                         <td>@item.id</td>
                                         <td>@item.Name</td>
-                                        <td>@item.email</td>
                                         <td>@item.phone</td>
-                                        <td>@item.address</td>
-                                        <td><a href="#" class="btn-active" data-id="@item.id">@(item.status == true ? "Kích hoạt" : "Khóa")</a></td>
                                         <td>
                                             <a href="/Admin/CustomerAdmin/Edit/@item.id">Edit</a>
                                             /

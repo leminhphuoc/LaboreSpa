@@ -5,6 +5,17 @@
     List<Models.Entity.Service> servicesList = ViewBag.servicesList;
     List<Models.Entity.Bed> bedsList = ViewBag.bedsList;
     List<Models.Entity.Room> roomsList = ViewBag.roomsList;
+    string customerName = null;
+    string phone = null;
+    if (ViewBag.name != null)
+    {
+        customerName = ViewBag.name;
+    }
+    if (ViewBag.phone != null)
+    {
+        phone = ViewBag.phone;
+    }
+
 }
 
 <!-- Title Page -->
@@ -52,7 +63,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <label class="wrap-input">
-                                <input required name="name" id="name" type="text" placeholder="Full name *">
+                                <input value="@(customerName == null ? "" : customerName)" required name="name" id="name" type="text" placeholder="Full name *">
 
                                 <i class="icon-user"></i>
                             </label>
@@ -60,7 +71,7 @@
 
                         <div class="col-sm-6">
                             <label class="wrap-input">
-                                <input required name="phone" id="phone" pattern="(09|08|03|04|05|07)+([0-9]{8})\b" type="text" placeholder="Phone number *">
+                                <input value="@(phone == null ? "" : phone)" required name="phone" id="phone" pattern="(09|08|03|04|05|07)+([0-9]{8})\b" type="text" placeholder="Phone number *">
 
                                 <i class="icon-call-out"></i>
                             </label>
